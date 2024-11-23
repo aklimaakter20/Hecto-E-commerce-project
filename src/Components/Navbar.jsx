@@ -18,9 +18,9 @@ const Navbar = () => {
           <div>
             <img src={Logo} alt="" />
           </div>
-          <div>
+          <div className="">
             <ul className={` lg:flex lg:gap-12 items-center lg:static ${menuShow ? "absolute top-20 duration-1000 left-32" : "absolute top-20 -left-80 "}`}>
-              <li className="hover:text-primary duration-700">Home</li>
+              <li className="hover:text-primary duration-700 ">Home</li>
               <li className="hover:text-primary duration-700">Pages</li>
               <li className="hover:text-primary duration-700">Products</li>
               <li className="hover:text-primary duration-700">Blog</li>
