@@ -5,7 +5,7 @@ import EllipseBlue from '../assets/EllipseBlue.png'
 import EllipseGreen from '../assets/EllipseGreen.png'
 
 
-const UniqueFeatures = () => {
+const Unique = () => {
   return (
    <section>
     <div className="container mx-auto">
@@ -46,4 +46,4 @@ const UniqueFeatures = () => {
   )
 }
 
-export default UniqueFeatures
+export default Unique
