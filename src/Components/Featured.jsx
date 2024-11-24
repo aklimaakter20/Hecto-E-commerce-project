@@ -36,7 +36,7 @@ let filteredProduct = info.filter((item)=> item.id >= 1 && item.id <=10)
             <Slider {...settings}> 
             {filteredProduct.map((item)=>(
     <div className='!w-[90%] h-[200px] shadow-2xl group py-12'>
-    <div className='relative bg-[#F6F7FB] sm:flex flex-col gap-3 items-center justify-center py-12 overflow-hidden'>
+    <div className='relative bg-[#F6F7FB] flex flex-col sm:flex-row gap-3 items-center justify-center py-12 overflow-hidden'>
        
         <img  src={item.thumbnail} alt="" />
         <div className='flex gap-2 absolute -left-20 top-0 duration-1000 ease-in-out group-hover:left-10 '>

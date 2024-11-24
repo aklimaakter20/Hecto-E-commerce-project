@@ -9,17 +9,17 @@ const Navbar = () => {
   const handleMenu = () => {
     setMenuShow(!menuShow);
   };
-  console.log(menuShow);
+  
 
   return (
-    <nav className="py-4 bg-lime-500">
+    <nav className="py-4 hover:">
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
           <div>
             <img src={Logo} alt="" />
           </div>
-          <div className="">
-            <ul className={` lg:flex lg:gap-12 items-center lg:static ${menuShow ? "absolute top-20 duration-1000 left-32" : "absolute top-20 -left-80 "}`}>
+          <div className="bg-slate-900 sm:bg-white">
+            <ul className={` lg:flex lg:gap-12 items-center lg:static ${menuShow ? "absolute top-20 duration-1000 left-[20%] text-center z-10 space-y-2 sm:invisible" : "absolute top-20 -left-80 "}`}>
               <li className="hover:text-primary duration-700 ">Home</li>
               <li className="hover:text-primary duration-700">Pages</li>
               <li className="hover:text-primary duration-700">Products</li>
