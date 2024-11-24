@@ -59,20 +59,7 @@ const OfferProduct = () => {
                 </div>
               ))}
 
-              {/* <div className='items-center flex gap-4'>
-                        <img src={Chair2} alt="" />
-                        <div>
-                            <h5 className='text-[16px] text-[#181575] font-bold'>Executive Seat chair</h5>
-                            <p className='text-xs font-bold text-[#181575]'>$32.00</p>
-                        </div>
-                    </div> */}
-              {/* <div className='items-center flex gap-4'>
-                        <img src={Chair3} alt="" />
-                        <div>
-                            <h5 className='text-[16px] text-[#181575] font-bold'>Executive Seat chair</h5>
-                            <p className='text-xs font-bold text-[#181575]'>$32.00</p>
-                        </div>
-                    </div> */}
+         
             </div>
           </div>
         </div>

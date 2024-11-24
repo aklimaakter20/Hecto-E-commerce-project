@@ -9,6 +9,8 @@ import Trending from '../Components/Trending'
 import OfferProduct from '../Components/OfferProduct'
 import Discount from '../Components/Discount'
 import Category from '../Components/Category'
+import Newsletter from '../Components/Newsletter'
+import LatestBlog from '../Components/LatestBlog'
 const Home = () => {
   return (
     <>
@@ -22,6 +24,8 @@ const Home = () => {
     <OfferProduct />
     <Discount />
     <Category />
+    <Newsletter />
+    <LatestBlog />
     </>
   )
 }
