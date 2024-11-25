@@ -9,7 +9,7 @@ import { ContextApi } from './Components/ContextApi.jsx';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ContextApi>
-    <App /> 
+    <App/>
     </ContextApi>
 
   </StrictMode>,

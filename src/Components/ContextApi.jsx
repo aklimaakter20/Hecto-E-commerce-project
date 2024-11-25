@@ -8,7 +8,7 @@ const ContextApi = ({children}) => {
 
   useEffect(()=>{
 
-    axios.get("https://dummyjson.com/products").then((response)=> {
+    axios.get("https://dummyjson.com/products?&limit=0").then((response)=> {
         setData(response.data.products)
     })
   

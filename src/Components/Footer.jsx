@@ -5,8 +5,8 @@ import { FaInstagramSquare } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="container mx-auto py-12 ">
+    <footer className="mt-20">
+      <div className="container mx-auto ">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center sm:text-start  justify-around font-lato">
           <div className="flex flex-col">
             <h2 className="font-bold text-xl sm:text-2xl md:text-3xl font-sans mb-6">
@@ -66,13 +66,13 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className=" bg-[#E7E4F8] py-2">
+      <div className=" bg-[#E7E4F8] mt-20">
         <div className=" flex flex-col sm:flex-row gap-4  justify-between items-center mx-20">
         <p className="text-[#8A8FB9] text-center sm:text-start font-lato">©Webecy - All Rights Reserved</p>
         <div className="flex items-center gap-3">
-          <FaFacebookF className="bg-[#151875] text-white w-6 h-6 p-1 text-[14px] rounded-full"/>
-          <FaTwitter className="bg-[#151875] text-white w-6 h-6 p-1 text-[14px] rounded-full"/>
-          <FaInstagramSquare className="bg-[#151875] text-white w-6 h-6 p-1 text-[14px] rounded-full"/>
+          <FaFacebookF className="bg-[#151875] text-white w-6 h-6 text-[14px] rounded-full"/>
+          <FaTwitter className="bg-[#151875] text-white w-6 h-6 text-[14px] rounded-full"/>
+          <FaInstagramSquare className="bg-[#151875] text-white w-6 h-6 text-[14px] rounded-full"/>
         </div>
         </div>
       

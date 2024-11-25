@@ -2,6 +2,7 @@
 import './App.css'
 import Home from './pages/Home'
 import Shop from './pages/Shop'
+import RootLayout from './Components/RootLayout';
 
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 
@@ -9,9 +10,9 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 function App() {
   let myRouter = createBrowserRouter(
     createRoutesFromElements(
-      <Route >
+      <Route element= {<RootLayout />}>
         <Route path="/" element={<Home />} />
-        <Route path='/shop' element={<Shop />}/>
+        <Route path="/shop" element={<Shop />}/>
       </Route>
     )
   );

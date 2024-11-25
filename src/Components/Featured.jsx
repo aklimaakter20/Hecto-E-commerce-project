@@ -47,7 +47,7 @@ let filteredProduct = info.filter((item)=> item.id >= 1 && item.id <=10)
         <button className='absolute -bottom-16 group-hover:bottom-4 duration-1000 bg-[#08D15F] px-4 py-2 rounded-sm text-xs text-white'>View Details</button>
     </div>
     <div className='text-center py-5 group-hover:bg-[#151875] duration-700 ease-in-out group-hover:shadow-2xl'>
-        <h3 className='text-primary font-bold text-[18px] font-lato pb-2 group-hover:text-white'>{item.title}</h3>
+        <h3 className='text-primary font-bold text-xl font-lato pb-2 group-hover:text-white'>{item.title}</h3>
         <h4 className='font-sans text-[14px] pb-1 text-[#151875] group-hover:text-white'></h4>
         <h6 className='font-sans text-[14px] text-[#151875] group-hover:text-white'>${item.price}</h6>
     </div>

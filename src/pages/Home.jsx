@@ -16,8 +16,8 @@ import Footer from '../Components/Footer'
 const Home = () => {
   return (
     <>
-    <Header/>
-     <Navbar />
+    
+    
      <Hero />
      <Featured />
      {/* <LatestProduct /> */}
@@ -29,7 +29,7 @@ const Home = () => {
     <Category />
     <Newsletter />
     {/* <LatestBlog /> */}
-    <Footer/>
+    
     </>
   )
 }
