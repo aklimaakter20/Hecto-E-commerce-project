@@ -25,7 +25,7 @@ const Footer = () => {
             <div>
               <span className="text-[#8A8FB9]">Contact Info</span>
               <p className="text-[#8A8FB9]">
-                17 Princess Road, London, Greater London NW1 8JR, UK
+                17 Princess Road, London,<br /> Greater London NW1 8JR, UK
               </p>
             </div>
           </div>
