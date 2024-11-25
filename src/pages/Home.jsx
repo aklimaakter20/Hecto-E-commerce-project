@@ -10,10 +10,13 @@ import OfferProduct from '../Components/OfferProduct'
 import Discount from '../Components/Discount'
 import Category from '../Components/Category'
 import Newsletter from '../Components/Newsletter'
-import LatestBlog from '../Components/LatestBlog'
+// import LatestBlog from '../Components/LatestBlog'
+import Header from '../Components/Header'
+import Footer from '../Components/Footer'
 const Home = () => {
   return (
     <>
+    <Header/>
      <Navbar />
      <Hero />
      <Featured />
@@ -25,7 +28,8 @@ const Home = () => {
     <Discount />
     <Category />
     <Newsletter />
-    <LatestBlog />
+    {/* <LatestBlog /> */}
+    <Footer/>
     </>
   )
 }
