@@ -39,12 +39,12 @@ const Trending = () => {
           <h2 className="text-center text-2xl sm:text-3xl font-bold text-[#151875] py-12">
           Trending Products
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4                                items-center justify-between">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6                                items-center justify-between">
             {categoryList.map((item, i) => (
               <div key={i}>
                 <div className="flex flex-col text-center items-center justify-around">
                   <img className="pb-2" src={item.thumbnail} alt="" />
-                  <h3 className="text-xl text-[#151875] font-bold pb-2">{item.title}</h3>
+                  <h3 className="text-[16px] font-lato  text-[#151875] font-bold pb-2">{item.title}</h3>
                   <p className="text-xs text-[#928ab5] font-lato w-40 leading-5">$ {item.price} </p>
                 </div>
               </div>

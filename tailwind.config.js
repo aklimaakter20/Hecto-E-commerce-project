@@ -17,8 +17,8 @@ export default {
         "section-bg": '#8A8FB9'
       },
       colors: {
-        "primary": " #FB2E86"
-
+        "primary": " #FB2E86",
+        "secondary": " #181575" 
       }
 
     },

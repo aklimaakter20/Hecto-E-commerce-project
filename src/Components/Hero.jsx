@@ -47,7 +47,7 @@ const Hero = () => {
     </div>
     <div className="container mx-auto py-12">
  
- <div className='flex items-center justify-around'>
+    <div className='flex flex-col-reverse md:flex-row gap-4 sm:gap-12 mx-2  items-center justify-around'>
          <div className='flex w-1/2'>
              <div className='flex flex-col '>
                  <img className='w-56' src={Light} alt="" />
@@ -56,7 +56,7 @@ const Hero = () => {
              </div>
              <div>
                  <h6 className='text-primary font-bold text-sm font-lato'>Best Furniture For Your Castle....</h6>
-                 <h1 className='text-3xl font-sans font-bold py-3'>New Furniture Collection <br />
+                 <h1 className='text-2xl sm:3xl md:4xl  font-sans font-bold py-3'>New Furniture Collection <br />
                  Trends in 2020</h1>
                  <p className='text-xs font-lato leading-6 text-[#8A8FB9]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing
                  in phasellus non in justo.</p>
@@ -73,8 +73,8 @@ const Hero = () => {
  </div>
  <div className="container mx-auto py-12">
  
- <div className='flex items-center justify-around'>
-         <div className='flex w-1/2'>
+ <div className='flex flex-col-reverse md:flex-row gap-4 sm:gap-12 mx-2  items-center justify-around'>
+ <div className='flex w-1/2'>
              <div className='flex flex-col '>
                  <img className='w-56' src={Light} alt="" />
                  <div className='w-3 h-3 bg-primary rounded-full mt-8 '></div>
@@ -82,7 +82,7 @@ const Hero = () => {
              </div>
              <div>
                  <h6 className='text-primary font-bold text-sm font-lato'>Best Furniture For Your Castle....</h6>
-                 <h1 className='text-3xl font-sans font-bold py-3'>New Furniture Collection <br />
+                 <h1 className='text-2xl sm:3xl md:4xl  font-sans font-bold py-3'>New Furniture Collection <br />
                  Trends in 2020</h1>
                  <p className='text-xs font-lato leading-6 text-[#8A8FB9]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing
                  in phasellus non in justo.</p>
@@ -99,8 +99,8 @@ const Hero = () => {
  </div>
  <div className="container mx-auto ">
  
- <div className='flex items-center justify-around'>
-         <div className='flex w-1/2'>
+ <div className='flex flex-col-reverse md:flex-row gap-4 sm:gap-12 mx-2  items-center justify-around'>
+ <div className='flex w-1/2'>
              <div className='flex flex-col '>
                  <img className='w-56' src={Light} alt="" />
                  <div className='w-3 h-3 bg-primary rounded-full mt-8 '></div>
@@ -108,7 +108,7 @@ const Hero = () => {
              </div>
              <div>
                  <h6 className='text-primary font-bold text-sm font-lato'>Best Furniture For Your Castle....</h6>
-                 <h1 className='text-3xl font-sans font-bold py-3'>New Furniture Collection <br />
+                 <h1 className='text-2xl sm:3xl md:4xl  font-sans font-bold py-3'>New Furniture Collection <br />
                  Trends in 2020</h1>
                  <p className='text-xs font-lato leading-6 text-[#8A8FB9]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing
                  in phasellus non in justo.</p>

@@ -26,9 +26,9 @@ const OfferProduct = () => {
   return (
     <section>
       <div className="container mx-auto">
-        <div className="flex flex-col sm:flex-row items-center justify-around py-12">
+        <div className="flex flex-col items-center md:flex-row  justify-around py-12 font-sans">
           <div>
-            <h2 className="text-[#181575] font-semibold text xl sm:text-2xl">
+            <h2 className="text-[#181575] font-semibold text-xl md:text-2xl">
               23% off in all products
             </h2>
             <button className="text-primary underline underline-offset-4 font-lato font-bold">
@@ -46,7 +46,7 @@ const OfferProduct = () => {
             <img src={Box} alt="" />
           </div>
           <div>
-            <div className="space-y-4">
+            <div className="">
               {offerList.map((item) => (
                 <div className="items-center flex gap-4">
                   <img src={item.thumbnail} alt="" />

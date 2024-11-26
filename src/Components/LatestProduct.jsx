@@ -1,22 +1,20 @@
-import React from "react";
-import LP1 from "../assets/latestP1.png";
-import LP2 from "../assets/latestP2.png";
-import LP3 from "../assets/latestP3.png";
-import LP4 from "../assets/latestP4.png";
-import LP5 from "../assets/latestP5.png";
-import LP6 from "../assets/latestP6.png";
+import React, { useContext } from "react";
+
+// import LP1 from "../assets/latestP1.png";
+// import LP2 from "../assets/latestP2.png";
+// import LP3 from "../assets/latestP3.png";
+// import LP4 from "../assets/latestP4.png";
+// import LP5 from "../assets/latestP5.png";
+// import LP6 from "../assets/latestP6.png";
 import Sale from "../assets/Sale.png";
 import { LuShoppingCart } from "react-icons/lu";
 import { FaRegHeart } from "react-icons/fa";
 import { MdOutlineZoomIn } from "react-icons/md";
-import { apiData } from "./ContextApi";
-
-
-
+import { apiData } from "../Components/ContextApi";
 
 const LatestProduct = () => {
-
-    let info = useContext(apiData)
+  let data = useContext(apiData);
+  let filter = data.filter((item) => item.id >= 30 && item.id <= 42);
 
   return (
     <section>
@@ -43,32 +41,26 @@ const LatestProduct = () => {
           </div>
           {/* Latest product images */}
 
-          <div className="sm:flex flex-col sm:flex-row items-center justify-between">
-            {info.map((item) => (
-              <div className="relative group  ">
-                <div>
-                  <img
-                    className="absolute invisible group-hover:visible -left-40 -top-8 group-hover:-left-2 group-hover:-top-8 duration-1000 ease-in "
-                    src={Sale}
-                    alt=""
-                  />
-                  <div>
-                    <img src={item.thumbnail} alt="" />
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {filter.map((item) => (
+              <div className="  shadow-2xl group m-6">
+                <div className="relative bg-[#F6F7FB] flex flex-col sm:flex-row gap-3 items-center justify-center py-12  overflow-hidden">
+                  <img className="w-48" src={item.thumbnail} alt="" />
+                  <div className="flex flex-col gap-2 absolute -left-10 bottom-10 duration-1000 ease-in-out group-hover:left-10 ">
+                    <FaRegHeart className="text-[#181675]  hover:text-[#2F1AC4]" />
+                    <LuShoppingCart className="text-[#181675]  hover:text-[#2F1AC4]" />
+                    <MdOutlineZoomIn className="text-[#181675]  hover:text-[#2F1AC4]" />
                   </div>
-                  <div className="flex gap-12 font-lato mt-5">
-                    <h6 className="text-[#151875]">{item.title}</h6>
-                    <p className="text-[#151875] font-bold ">
-                      ${item.price}
-                      <span className="text-primary font-bold text-xs">
-                        ${item.price}
-                      </span>
-                    </p>
-                  </div>
-                  <div className="absolute invisible group-hover:visible -left-20 group-hover:left-0 duration-1000 ease-in-out bottom-20  space-y-3 flex flex-col  ">
-                    <FaRegHeart className="text-[#3F509E] " />
-                    <LuShoppingCart className="text-[#3F509E]" />
-                    <MdOutlineZoomIn className="text-[#3F509E]" />
-                  </div>
+                  <img className="absolute -left-32 group-hover:left-2 group-hover:top-3 duration-700 ease-in-out" src={Sale} alt="" />
+                </div>
+                <div className="flex items-center  justify-between text-center py-5 duration-700 ease-in-out group-hover:shadow-2xl px-6 ">
+                  <h3 className="text-primary font-bold text-[16px] font-lato pb-2">
+                    {item.title}
+                  </h3>
+                  
+                  <h6 className="font-sans text-[14px] text-[#151875]">
+                    ${item.price}
+                  </h6>
                 </div>
               </div>
             ))}
@@ -77,8 +69,6 @@ const LatestProduct = () => {
       </div>
     </section>
   );
-}
+};
 
 export default LatestProduct;
-
-

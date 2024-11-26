@@ -35,8 +35,10 @@ const Shop = () => {
   
   return (
     <div className='container mx-auto'>
+      
       <PageHeading heading= 'Shop Grid Default' pageName = 'Shop Grid Default'/>
       <EcommerceItem />
+
       <div className='flex justify-around'>
       <div className='w-[20%]'>
         <div className='flex items-center gap-1'>

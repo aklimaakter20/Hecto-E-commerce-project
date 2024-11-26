@@ -36,8 +36,8 @@ const Category = () => {
               <div key={i}>
                 <div className="flex flex-col text-center items-center justify-center">
                   <img className="pb-2" src={item.thumbnail} alt="" />
-                  <h3 className="text-xl text-[#151875] font-bold pb-2">{item.title}</h3>
-                  <p className="text-xs text-[#928ab5] font-lato w-40 leading-5">$ {item.price} </p>
+                  <h3 className="text-xl text-[#151875]  pb-2">{item.title}</h3>
+                  <p className="text-xs text-[#928ab5] font-lato leading-5">$ {item.price} </p>
                 </div>
               </div>
             ))}

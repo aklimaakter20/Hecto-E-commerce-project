@@ -16,9 +16,9 @@ const Discount = () => {
                 <li className='hover:text-primary duration-700 ease-in-out hover:underline underline-offset-4'>Plastic Chair</li>
                 <li className='hover:text-primary duration-700 ease-in-out hover:underline underline-offset-4'>Sofa Collection</li>
             </ul>
-            <div className='flex flex-col-reverse md:flex-row items-center justify-around sm:mx-6 lg:mx-12'>
-                <div className='py-20'>
-                    <h2 className='text-2xl md:text-3xl  text-[#151875] font-bold pb-6'>20% Discount Of All Products</h2>
+            <div className='flex flex-col-reverse md:flex-row items-center justify-center  md:justify-around sm:mx-6 lg:mx-12'>
+                <div className='py-20 '>
+                    <h2 className='text-xl md:text-3xl  text-[#151875] font-bold pb-6'>20% Discount Of All Products</h2>
                     <h6 className='text-primary text-xl font-semibold pb-4 font-lato '>Eams Sofa Compact</h6>
                     <p className='w-[80%] text-[#B7BACB] pb-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu eget feugiat habitasse nec, bibendum condimentum.</p>
 
