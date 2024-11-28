@@ -51,10 +51,10 @@ const Featured = () => {
         <h1 className='text-center text-xl md:text-2xl lg:text-3xl font-bold font-josefin mt-20 pb-10 text-[#151875]'>Featured Products</h1>
   
   
-        <div className="  pb-14   ">
+        <div className="pb-14   ">
          <Slider {...settings} >{
           filter.map((item) => (
-            <div className='h-[100px] shadow-2xl group'>
+            <div className='h-[200px] shadow-2xl group py-12'>
             <div className='relative bg-[#F6F7FB] flex flex-col sm:flex-row gap-3 items-center justify-center py-12 overflow-hidden'>
                
                 <img  src={item.thumbnail} alt="" />

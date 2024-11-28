@@ -5,14 +5,15 @@ const Newsletter = () => {
   return (
    <section>
     <div className="container mx-auto">
-        <div className='relative py-12 text-center'>
-            <img className='h-[250px] w-full' src={NewsletterImg} alt="" />
-            <div className='absolute top-[40%] left-[16%] sm:left-[26%] lg:left-[36%] items-center text-center '>
-                <h2 className='text-xl sm:text-2xl text-[#181575] font-bold text-center '>Get Leatest Update By Subscribe <br /> 0ur Newslater</h2>
-                <button className='bg-primary px-6 py-2 text-white rounded-sm mt-6'>Shop Now</button>
-
+    <div className="  ">
+           <div className="py-10">
+           <img className='' src={NewsletterImg} alt="" />
+           </div>
+            <div className="relative bottom-40  text-center">
+                <h2 className='md:text-2xl text-[12px] md:mt-0 mt-24 font-bold font-josefin text-[#154987] '>Get Leatest Update By Subscribe <br /> 0ur Newslater</h2>
+                <button className='text-white md:text-[12px] text-[8px] px-2 md:py-2 md:px-10 bg-primary md:mt-2 md:rounded-lg rounded-sm'>Shop Now</button>
             </div>
-        </div>
+      </div>
     </div>
    </section>
   )

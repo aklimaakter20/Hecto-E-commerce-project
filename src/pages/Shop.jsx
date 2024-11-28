@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
 import PageHeading from '../Components/PageHeading'
-import EcommerceItem from '../Components/EcommerceItem'
+import EcommerceItems from '../Components/EcommerceItems'
 import { apiData } from '../Components/ContextApi'
 import { FaRegHeart } from "react-icons/fa";
 import { LuShoppingCart } from "react-icons/lu";
 import { MdOutlineZoomIn } from "react-icons/md";
 import { MdOutlineArrowDropDown } from "react-icons/md";
+import AllLogo from '../Components/AllLogo';
 
 
 const Shop = () => {
@@ -37,7 +38,7 @@ const Shop = () => {
     <div className='container mx-auto'>
       
       <PageHeading heading= 'Shop Grid Default' pageName = 'Shop Grid Default'/>
-      <EcommerceItem />
+      <EcommerceItems />
 
       <div className='flex justify-around'>
       <div className='w-[20%]'>
@@ -125,7 +126,7 @@ const Shop = () => {
      </div>
       </div>
    
- 
+ <AllLogo />
     </div>
   )
 }

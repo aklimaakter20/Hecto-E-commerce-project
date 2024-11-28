@@ -3,7 +3,7 @@ import { FaAngleDown } from "react-icons/fa";
 import { HiViewGrid } from "react-icons/hi";
 import { RiListView } from "react-icons/ri";
 
-const EcommerceItem = () => {
+const EcommerceItems= () => {
   return (
     <section>
       <div className="container mx-auto py-20">
@@ -34,4 +34,4 @@ const EcommerceItem = () => {
   );
 };
 
-export default EcommerceItem;
+export default EcommerceItems;
