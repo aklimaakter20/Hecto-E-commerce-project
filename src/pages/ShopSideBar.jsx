@@ -24,8 +24,8 @@ const ShopSideBar = () => {
 
             <div>
                 <h4 className="text-secondary text-center md:text-start mb-5 text-xl font-bold underline underline-offset-2">Product Brand</h4>
-                <div className="flex  flex-col sm:flex-row  items-center ">
-                <div className=" w-[20%] flex flex-col gap-1">
+                <div className="flex flex-col md:flex-row items-center ">
+                <div className="lg:w-[20%] flex flex-col gap-1">
                     <div className="flex items-center gap-3">
                         <FaCheck className="text-[#603EFF] bg-[#E5E0FC] text-[12px] w-4 h-4 p-1" />
                         <p className="text-[#7E81A2] text-[14px]">Coaster Furniture</p>
@@ -51,7 +51,7 @@ const ShopSideBar = () => {
                         <p className="text-[#7E81A2] text-[14px]">Green DIY furniture</p>
                     </div>
                 </div>
-                <ShopListReuse className= 'w-[100%]' image = {WatchImg} heading = 'Dictum morbi'/>
+                <ShopListReuse image = {WatchImg} heading = 'Dictum morbi'/>
                 </div>
                
 
@@ -60,8 +60,8 @@ const ShopSideBar = () => {
 
             <div>
                 <h4 className="text-secondary text-center md:text-start mb-5  text-xl font-bold underline underline-offset-2">Discount Offer </h4>
-                <div className="flex  flex-col sm:flex-row  items-center ">
-                <div className=" w-[20%] flex flex-col gap-1">
+                <div className="flex  flex-col md:flex-row  items-center ">
+                <div className=" lg:w-[20%] flex flex-col gap-1">
                     <div className="flex items-center gap-3">
                         <FaCheck className="text-[#FF3EB2] bg-[#FFDBF1] hover:bg-[#FF3EB2] hover:text-white duration-700 ease-in-out text-[12px] w-4 h-4 p-1" />
                         <p className="text-[#7E81A2] text-[14px]">20% Cashback</p>
@@ -85,8 +85,8 @@ const ShopSideBar = () => {
             
             <div>
                 <h4 className="text-secondary text-center md:text-start mb-5 text-xl font-bold underline underline-offset-2">Rating Item </h4>
-                <div className="flex  flex-col sm:flex-row  items-center ">
-                <div className=" w-[20%] flex flex-col gap-3">
+                <div className="flex  flex-col md:flex-row  items-center ">
+                <div className="lg:w-[20%] flex flex-col gap-3">
                     <div className="flex items-center gap-3">
                         <FaCheck className="text-[#FFC107] bg-[#FFF6DA] hover:bg-[#FFCC2E] hover:text-white duration-700 ease-linear text-[12px] w-4 h-4 p-1" />
                         <div className="flex text-[#FFCC2E] gap-1">
@@ -140,8 +140,8 @@ const ShopSideBar = () => {
             {/* Category item */}
             <div>
                 <h4 className="text-secondary text-center md:text-start mb-5 text-xl font-bold underline underline-offset-2 pb-8">Categories</h4>
-                <div className="flex flex-col sm:flex-row items-center ">
-                <div className=" w-[20%] flex flex-col gap-1">
+                <div className="flex flex-col md:flex-row items-center ">
+                <div className=" lg:w-[20%] flex flex-col gap-1">
                     <div className="flex items-center gap-3">
                         <FaCheck className="text-[#FF3EB2] bg-[#FFDBF1] hover:bg-[#FF3EB2] hover:text-white duration-700 ease-in-out text-[12px] w-4 h-4 p-1" />
                         <p className="text-[#7E81A2] text-[14px]">Prestashop</p>

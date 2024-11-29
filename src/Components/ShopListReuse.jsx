@@ -17,10 +17,10 @@ const ShopListReuse = (props) => {
         <div className="container mx-auto">
         <div className="flex flex-col sm:flex-row gap-6 items-center py-6 mx-auto">
           <div>
-            <img className="w-64 lg:80" src={props.image} alt="" />
+            <img className="w-80 sm:w-96 lg:86 mx-16" src={props.image} alt=""/>
           </div>
       
-            <div>
+            <div className="mx-16">
                 <div className="flex items-center gap-10 mx-auto">
                 <div>
                 <h4 className="text-secondary text-xl font-bold mb-2">{props.heading}</h4>
