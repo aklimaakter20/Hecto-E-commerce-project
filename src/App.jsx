@@ -7,6 +7,7 @@ import RootLayout from './Components/RootLayout';
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 import ShopList from './pages/ShopList';
 import ShopSideBar from './pages/ShopSideBar';
+import ShoppingCurt from './pages/ShoppingCurt';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/shop" element={<Shop />}/>
         <Route path='/shopList' element= {<ShopList/>}/>
         <Route path='/shopSideBar' element= {<ShopSideBar/>}/>
+        <Route path='/shoppingCart' element= {<ShoppingCurt />}/>
       </Route>
     )
   );

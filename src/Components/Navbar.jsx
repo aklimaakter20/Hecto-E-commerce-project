@@ -25,6 +25,7 @@ const Navbar = () => {
               <li className="mr-3 hover:font-semibold hover:text-primary hover:text-[18px] bg-white duration-700"><Link to = '/shop'>Shop</Link></li>
               <li className="mr-3 hover:font-semibold hover:text-primary hover:text-[18px] bg-white duration-700"><Link to = '/shopList'>SList</Link></li>
               <li className="mr-3 hover:font-semibold hover:text-primary hover:text-[18px] bg-white duration-700"><Link to = '/shopSideBar'>Sidebar</Link></li>
+              <li className="mr-3 hover:font-semibold hover:text-primary hover:text-[18px] bg-white duration-700"><Link to = '/shoppingCart'>ShoppingCart</Link></li>
 
               <li className="px-2 py-1  hover:font-semibold hover:text-primary hover:text-[18px] bg-white duration-700">Contact</li>
               </ul>
