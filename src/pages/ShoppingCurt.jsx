@@ -11,7 +11,7 @@ import SCurtReuse from "../Components/SCurtReuse";
 import { useSelector } from "react-redux";
 
 const ShoppingCurt = () => {
-  let CartData = useSelector((state)=>state.cartItemSlice.cartItem)
+  // let CartData = useSelector((state)=>state.cartItemSlice.cartItem)
   
   return (
     <>
@@ -29,10 +29,10 @@ const ShoppingCurt = () => {
               <h4 className="font-bold text-secondary text-xl">Quantity</h4>
               <h4 className="font-bold text-secondary text-xl">Total</h4>
             </div>
-            {
-              CartData.map((item)=>(
+            {/* { */}
+              {/* // CartData.map((item)=>( */}
                 <div className="flex flex-col gap-6">
-                <SCurtReuse image={HandBag1} heading={item.title} />
+                <SCurtReuse image={HandBag1} heading="Ut diam consequat" />
                 <SCurtReuse image={HandBag2} heading="Ut diam consequat" />
                 <SCurtReuse image={HandBag3} heading="Ut diam consequat" />
                 <SCurtReuse image={HandBag4} heading="Ut diam consequat" />
@@ -48,8 +48,8 @@ const ShoppingCurt = () => {
                   </div>
                 </div>
               </div>
-              ))
-            }
+              {/* )) */}
+            {/* } */}
      
           </div>
           <div>
