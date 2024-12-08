@@ -7,6 +7,8 @@ import { LuShoppingCart } from "react-icons/lu";
 import { MdOutlineZoomIn } from "react-icons/md";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import AllLogo from "../Components/AllLogo";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Components/slice/cartSlice";
 
 const Shop = () => {
   let data = useContext(apiData);
@@ -21,62 +23,58 @@ const Shop = () => {
 
   let [categoryShow, setCategoryShow] = useState(false);
   let [brandShow, setBrandShow] = useState(false);
-  let [priceShow, setPriceShow] = useState(false)
+  let [priceShow, setPriceShow] = useState(false);
 
   let [cat, setCat] = useState([]);
 
-  
-
-  let [priceItems, setPriceItems] = useState([])
+  let [priceItems, setPriceItems] = useState([]);
   const handlePricing = (value) => {
-    let priceFilter =  data.filter((item)=> item.price > value.low && item.price <= value.high)
-    priceItems(priceFilter)
-    setCat([])
-    
-  }
+    let priceFilter = data.filter(
+      (item) => item.price > value.low && item.price <= value.high
+    );
+    priceItems(priceFilter);
+    setCat([]);
+  };
 
   const handleCategory = (c) => {
     let filteredProducts = data.filter((item) => item.category == c);
     setCat(filteredProducts);
-    setPriceItems([])
+    setPriceItems([]);
   };
 
   let [currentPage, setCurrentPage] = useState(1);
-  let [perPage, setPerPage] = useState(15)
+  let [perPage, setPerPage] = useState(15);
 
   let lastItemIndex = currentPage * perPage;
   let firstItemIndex = lastItemIndex - perPage;
 
-  let perPageProduct = data.slice(firstItemIndex, lastItemIndex)
+  let perPageProduct = data.slice(firstItemIndex, lastItemIndex);
   // console.log(perPageProduct);
-  
-
-
 
   let pageNumbers = Math.ceil(data.length / perPage);
   // console.log(pageNumbers);
-  
 
-  let numbers = useState([])
-  for(let i = 1 ; i <= pageNumbers; i++){
-  numbers.push(i)   
-    
+  let numbers = useState([]);
+  for (let i = 1; i <= pageNumbers; i++) {
+    numbers.push(i);
   }
   // console.log(numbers);
-  const handlePrevPage = ()=>{
-    if(currentPage > 1 ){
-      setCurrentPage(currentPage - 1)
-
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
     }
+  };
+  const handleNextPage = () => {
+    if (currentPage !== pageNumbers) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  let dispatch = useDispatch()
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart({...product, qty:1}))
   }
-  const handleNextPage =()=> {
-      if(currentPage !== pageNumbers){
-        setCurrentPage(currentPage + 1)
-
-      }
-
-  }
-
 
   return (
     <div className="container mx-auto">
@@ -109,7 +107,7 @@ const Shop = () => {
             )}
           </div>
           <div>
-          <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1">
               <h2
                 onClick={() => setPriceShow(!priceShow)}
                 className="text-xl font-bold mb-4 text-[#181575] cursor-pointer"
@@ -120,12 +118,18 @@ const Shop = () => {
 
             {priceShow && (
               <ul className="flex flex-col gap-6 mb-5">
-                <li onClick={() => handlePricing({low:0.00, high: 10.00})}>$0.00 - $10.00</li>
-                <li onClick={() => handlePricing({low:10.00, high: 20.00})}>$10.00 - $20.00</li>
-                <li onClick={() => handlePricing({low:20.00, high: 100.00})}>$20.00 - $100.00</li>
-                <li onClick={() => handlePricing({low:100.00, high: 1000.00})}>$100.00 - $1000.00</li>
-               
-
+                <li onClick={() => handlePricing({ low: 0.0, high: 10.0 })}>
+                  $0.00 - $10.00
+                </li>
+                <li onClick={() => handlePricing({ low: 10.0, high: 20.0 })}>
+                  $10.00 - $20.00
+                </li>
+                <li onClick={() => handlePricing({ low: 20.0, high: 100.0 })}>
+                  $20.00 - $100.00
+                </li>
+                <li onClick={() => handlePricing({ low: 100.0, high: 1000.0 })}>
+                  $100.00 - $1000.00
+                </li>
               </ul>
             )}
           </div>
@@ -151,9 +155,8 @@ const Shop = () => {
           )}
         </div>
         <div className="w-[75%] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
-
-          {cat.length > 0 ? 
-             cat.map((item) => (
+          {cat.length > 0
+            ? cat.map((item) => (
                 <div className="  shadow-2xl group m-6">
                   <div className="relative bg-[#F6F7FB] flex flex-col sm:flex-row gap-3 items-center justify-center py-12 overflow-hidden">
                     <img className="w-48" src={item.thumbnail} alt="" />
@@ -177,10 +180,8 @@ const Shop = () => {
                   </div>
                 </div>
               ))
-
-              :
-              priceItems.length > 0 ?
-              priceItems.map((item)=>(
+            : priceItems.length > 0
+            ? priceItems.map((item) => (
                 <div className="  shadow-2xl group m-6">
                   <div className="relative bg-[#F6F7FB] flex flex-col sm:flex-row gap-3 items-center justify-center py-12 overflow-hidden">
                     <img className="w-48" src={item.thumbnail} alt="" />
@@ -204,8 +205,7 @@ const Shop = () => {
                   </div>
                 </div>
               ))
-              :
-              perPageProduct.map((item) => (
+            : perPageProduct.map((item) => (
                 <div className="  shadow-2xl group m-6">
                   <div className="relative bg-[#F6F7FB] flex flex-col sm:flex-row gap-3 items-center justify-center py-12 overflow-hidden">
                     <img className="w-48" src={item.thumbnail} alt="" />
@@ -226,25 +226,33 @@ const Shop = () => {
                     <h6 className="font-sans text-[14px] text-[#151875] ">
                       ${item.price}
                     </h6>
-                    <button className="bg-primary text-white w-full py-2">Add to Cart</button>
-
+                    <button
+                      onClick={()=>handleAddToCart(item)}
+                      className="bg-primary text-white w-full py-2"
+                    >
+                      Add to Cart
+                    </button>
                   </div>
                 </div>
               ))}
-              
         </div>
-     
       </div>
       <div>
         <ul className="flex items-center justify-center gap-5">
           <li onClick={handlePrevPage}>Prev</li>
-        {numbers.map((item)=>(
-           <li className={`border-2 px-5 py-2 ${currentPage === item ? "bg-[#FB2E86] text-white" : ""}`} onClick={()=>setCurrentPage(item)}>{item}</li>
+          {numbers.map((item) => (
+            <li
+              className={`border-2 px-5 py-2 ${
+                currentPage === item ? "bg-[#FB2E86] text-white" : ""
+              }`}
+              onClick={() => setCurrentPage(item)}
+            >
+              {item}
+            </li>
           ))}
           <li onClick={handleNextPage}>Next</li>
         </ul>
-         
-        </div>
+      </div>
       <AllLogo />
     </div>
   );

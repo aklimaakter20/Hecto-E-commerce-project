@@ -8,8 +8,11 @@ import HandBag5 from "../assets/handbag5.png";
 import Check from "../assets/check.png";
 
 import SCurtReuse from "../Components/SCurtReuse";
+import { useSelector } from "react-redux";
 
 const ShoppingCurt = () => {
+  let CartData = useSelector((state)=>state.cartItemSlice.cartItem)
+  
   return (
     <>
       <section>
@@ -26,23 +29,28 @@ const ShoppingCurt = () => {
               <h4 className="font-bold text-secondary text-xl">Quantity</h4>
               <h4 className="font-bold text-secondary text-xl">Total</h4>
             </div>
-            <div className="flex flex-col gap-6">
-              <SCurtReuse image={HandBag1} heading="Ut diam consequat" />
-              <SCurtReuse image={HandBag2} heading="Ut diam consequat" />
-              <SCurtReuse image={HandBag3} heading="Ut diam consequat" />
-              <SCurtReuse image={HandBag4} heading="Ut diam consequat" />
-              <SCurtReuse image={HandBag5} heading="Ut diam consequat" />
-              <div>
-                <div className="flex justify-around">
-                  <button className="bg-primary text-white px-6 py-2 rounded-sm">
-                    Update Curt
-                  </button>
-                  <button className="bg-primary text-white px-6 py-2 rounded-sm">
-                    Clear Curt
-                  </button>
+            {
+              CartData.map((item)=>(
+                <div className="flex flex-col gap-6">
+                <SCurtReuse image={HandBag1} heading={item.title} />
+                <SCurtReuse image={HandBag2} heading="Ut diam consequat" />
+                <SCurtReuse image={HandBag3} heading="Ut diam consequat" />
+                <SCurtReuse image={HandBag4} heading="Ut diam consequat" />
+                <SCurtReuse image={HandBag5} heading="Ut diam consequat" />
+                <div>
+                  <div className="flex justify-around">
+                    <button className="bg-primary text-white px-6 py-2 rounded-sm">
+                      Update Curt
+                    </button>
+                    <button className="bg-primary text-white px-6 py-2 rounded-sm">
+                      Clear Curt
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
+              ))
+            }
+     
           </div>
           <div>
             <div className="">
