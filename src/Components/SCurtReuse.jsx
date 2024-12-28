@@ -4,7 +4,7 @@ import { FaPlus } from "react-icons/fa";
 import { FaEuroSign } from "react-icons/fa";
 const SCurtReuse = (props) => {
 
-  
+   
   return (
     <>
       <section>

@@ -111,7 +111,7 @@ const Hero = () => {
                  <h1 className='text-2xl sm:3xl md:4xl  font-sans font-bold py-3'>New Furniture Collection <br />
                  Trends in 2020</h1>
                  <p className='text-xs font-lato leading-6 text-[#8A8FB9]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing
-                 in phasellus non in justo.</p>
+                 in phase llus non in justo.</p>
                  <div className='py-8 flex items-center justify-between'>
                  <button className='bg-primary text-white py-2 px-6 rounded-sm'>Shop Now</button>
 
