@@ -15,10 +15,12 @@ const Shop = () => {
 
   let [category, setCategory] = useState([]);
   let [brand, setBrand] = useState([]);
+  let [price, setPrice] = useState([]);
 
   useEffect(() => {
     setCategory([...new Set(data.map((item) => item.category))]);
     setBrand([...new Set(data.map((item) => item.brand))]);
+    setPrice([...new Set(data.map((item) => item.price))]);
   }, [data]);
 
   let [categoryShow, setCategoryShow] = useState(false);
@@ -26,20 +28,26 @@ const Shop = () => {
   let [priceShow, setPriceShow] = useState(false);
 
   let [cat, setCat] = useState([]);
+  const handleCategory = (c) => {
+    let filteredProducts = data.filter((item) => item.category == c);
+    setCat(filteredProducts);
+    setPriceItems([]);
+  };
 
   let [priceItems, setPriceItems] = useState([]);
   const handlePricing = (value) => {
     let priceFilter = data.filter(
       (item) => item.price > value.low && item.price <= value.high
     );
-    priceItems(priceFilter);
+    setPriceItems(priceFilter);
     setCat([]);
   };
 
-  const handleCategory = (c) => {
-    let filteredProducts = data.filter((item) => item.category == c);
-    setCat(filteredProducts);
-    setPriceItems([]);
+  let [brandItem, setBrandItem] = useState([]);
+  const handleBrand = (quality) => {
+    let filterBrand = data.filter((item) => item.brand == quality);
+    setBrandItem(filterBrand);
+    setCat([]);
   };
 
   let [currentPage, setCurrentPage] = useState(1);
@@ -70,11 +78,11 @@ const Shop = () => {
     }
   };
 
-  let dispatch = useDispatch()
+  let dispatch = useDispatch();
 
   const handleAddToCart = (product) => {
-    dispatch(addToCart({...product, qty:1}))
-  }
+    dispatch(addToCart({ ...product, qty: 1 }));
+  };
 
   return (
     <div className="container mx-auto">
@@ -85,12 +93,12 @@ const Shop = () => {
         <div className="w-[20%]">
           <div>
             <div className="flex items-center gap-1">
-              <h2
+              <h5
                 onClick={() => setCategoryShow(!categoryShow)}
-                className="text-xl font-bold mb-4 text-[#181575] cursor-pointer"
+                className="flex items-center gap-5 text-xl font-bold mb-4 text-[#181575] cursor-pointer"
               >
-                Shop By Category{" "}
-              </h2>
+                Shop By Category <MdOutlineArrowDropDown />{" "}
+              </h5>
             </div>
 
             {categoryShow && (
@@ -108,46 +116,59 @@ const Shop = () => {
           </div>
           <div>
             <div className="flex items-center gap-1">
-              <h2
+              <h5
                 onClick={() => setPriceShow(!priceShow)}
-                className="text-xl font-bold mb-4 text-[#181575] cursor-pointer"
+                className="flex items-center gap-5 text-xl font-bold mb-4 text-[#181575] cursor-pointer"
               >
-                Shop by Price{" "}
-              </h2>
+                Shop by Price <MdOutlineArrowDropDown />{" "}
+              </h5>
             </div>
 
             {priceShow && (
               <ul className="flex flex-col gap-6 mb-5">
-                <li onClick={() => handlePricing({ low: 0.0, high: 10.0 })}>
+                <li
+                  className="px-5 py-2 text-[#181575] cursor-pointer capitalize hover:bg-primary duration-700 ease-in-out hover:text-white "
+                  onClick={() => handlePricing({ low: 0.0, high: 10.0 })}
+                >
                   $0.00 - $10.00
                 </li>
-                <li onClick={() => handlePricing({ low: 10.0, high: 20.0 })}>
+                <li
+                  className="px-5 py-2 text-[#181575] cursor-pointer capitalize hover:bg-primary duration-700 ease-in-out hover:text-white "
+                  onClick={() => handlePricing({ low: 10.0, high: 20.0 })}
+                >
                   $10.00 - $20.00
                 </li>
-                <li onClick={() => handlePricing({ low: 20.0, high: 100.0 })}>
+                <li
+                  className="px-5 py-2 text-[#181575] cursor-pointer capitalize hover:bg-primary duration-700 ease-in-out hover:text-white "
+                  onClick={() => handlePricing({ low: 20.0, high: 100.0 })}
+                >
                   $20.00 - $100.00
                 </li>
-                <li onClick={() => handlePricing({ low: 100.0, high: 1000.0 })}>
+                <li
+                  className="px-5 py-2 text-[#181575] cursor-pointer capitalize hover:bg-primary duration-700 ease-in-out hover:text-white "
+                  onClick={() => handlePricing({ low: 100.0, high: 1000.0 })}
+                >
                   $100.00 - $1000.00
                 </li>
               </ul>
             )}
           </div>
           <div className="flex items-center gap-1">
-            <h2
+            <h5
               onClick={() => setBrandShow(!brandShow)}
-              className="text-xl font-bold mb-4 text-[#181575] cursor-pointer"
+              className="flex items-center gap-5 text-xl font-bold mb-4 text-[#181575] cursor-pointer"
             >
-              Shop By Brand{" "}
-            </h2>
-
-            <MdOutlineArrowDropDown className="text-[20px] text-[#181575]" />
+              Shop By Brand <MdOutlineArrowDropDown />{" "}
+            </h5>
           </div>
 
           {brandShow && (
             <ul className="space-y-2 h-48 overflow-y-scroll">
               {brand.map((item) => (
-                <li className="px-5 py-2 text-[#181575] cursor-pointer  capitalize hover:bg-primary duration-700 ease-in-out hover:text-white ">
+                <li
+                  className="px-5 py-2 text-[#181575] cursor-pointer  capitalize hover:bg-primary duration-700 ease-in-out hover:text-white"
+                  onClick={() => handleBrand(item)}
+                >
                   {item}
                 </li>
               ))}
@@ -205,6 +226,32 @@ const Shop = () => {
                   </div>
                 </div>
               ))
+              : brandItem.length > 0
+              ? brandItem.map((item) => (
+                  <div className="  shadow-2xl group m-6">
+                    <div className="relative bg-[#F6F7FB] flex flex-col sm:flex-row gap-3 items-center justify-center py-12 overflow-hidden">
+                    <img className="w-48" src={item.thumbnail} alt="" />
+                      <div className="flex gap-2 absolute -left-20 top-0 duration-1000 ease-in-out group-hover:left-10 ">
+                        <FaRegHeart className="text-[#05E6B7] hover:text-[#2F1AC4]" />
+                        <LuShoppingCart className="text-[#05E6B7] hover:text-[#2F1AC4]" />
+                        <MdOutlineZoomIn className="text-[#05E6B7] hover:text-[#2F1AC4]" />
+                      </div>
+                      <button className="absolute -bottom-16 group-hover:bottom-4 duration-1000 bg-[#08D15F] px-4 py-2 rounded-sm text-xs text-white">
+                        View Details
+                      </button>
+                    </div>
+                    <div className="text-center py-5 group-hover:bg-[#151875] duration-700 ease-in-out group-hover:shadow-2xl">
+                      <h3 className="text-primary font-bold text-[18px] font-lato pb-2 group-hover:text-white">
+                        {item.title}
+                      </h3>
+                      <h4 className="font-sans text-[14px] pb-1 text-[#151875] group-hover:text-white"></h4>
+                      <h6 className="font-sans text-[14px] text-[#151875] group-hover:text-white">
+                        ${item.price}
+                      </h6>
+                    </div>
+                  </div>
+                ))
+              
             : perPageProduct.map((item) => (
                 <div className="  shadow-2xl group m-6">
                   <div className="relative bg-[#F6F7FB] flex flex-col sm:flex-row gap-3 items-center justify-center py-12 overflow-hidden">
@@ -227,7 +274,7 @@ const Shop = () => {
                       ${item.price}
                     </h6>
                     <button
-                      onClick={()=>handleAddToCart(item)}
+                      onClick={() => handleAddToCart(item)}
                       className="bg-primary text-white w-full py-2"
                     >
                       Add to Cart

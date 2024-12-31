@@ -1,14 +1,12 @@
-.slick-dots button::before{
-    color: #FEBAD7 !important;
-    width: 100% !important;
-}
+
 .slick-dots li{
-    background-color: #FEBAD7;
-    width: 50px !important;
+   border: 2px solid #FB2E86;
+    width: 10px !important;
+    height: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+
 }
 .slick-dots li.slick-active {
     background-color: #FB2E86 !important;
-}
-.slick-dots li.slick-active button::before {
-    color: transparent !important;
 }

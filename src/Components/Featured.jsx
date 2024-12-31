@@ -9,6 +9,7 @@ import { apiData } from './ContextApi'
 const Featured = () => {
 
     const settings = {
+      
       dots: true,
       infinite: true,
       speed: 500,
@@ -43,7 +44,7 @@ const Featured = () => {
     };
   
    let info = useContext(apiData)
-  let filter = info.filter((item) => item.id >= 20 && item.id <= 26)
+  let filterProduct = info.filter((item) => item.id >= 20 && item.id <= 25)
    
     return (
       <>
@@ -51,11 +52,11 @@ const Featured = () => {
         <h1 className='text-center text-xl md:text-2xl lg:text-3xl font-bold font-josefin mt-20 pb-10 text-[#151875]'>Featured Products</h1>
   
   
-        <div className="pb-14   ">
+        <div className="py-14   ">
          <Slider {...settings} >{
-          filter.map((item) => (
-            <div className='h-[200px] shadow-2xl group py-12'>
-            <div className='relative bg-[#F6F7FB] flex flex-col sm:flex-row gap-3 items-center justify-center py-12 overflow-hidden'>
+          filterProduct.map((item) => (
+            <div className='h-[200px] shadow-2xl group py-20'>
+            <div className='relative  bg-[#F6F7FB] flex flex-col sm:flex-row gap-3 items-center justify-center py-12 overflow-hidden'>
                
                 <img  src={item.thumbnail} alt="" />
                 <div className='flex gap-2 absolute -left-20 top-0 duration-1000 ease-in-out group-hover:left-10 '>

@@ -13,12 +13,16 @@ const EcommerceItems= () => {
             <p className="text-[#8A8FB9] text-xs">About 9,620 results (0.62 seconds)</p>
           </div>
           <div className="flex items-center gap-10 text-[#3F509E] cursor-pointer">
-            <p className="text-[12] md:text-lg">Per Page:</p>
-            <p className="text-[12] md:text-lg">Sort By:</p>
+            <p className="text-[12] md:text-lg">Per Page: <input className="border-2 outline-none w-[100px] pl-2" type="text" /></p>
+            <div className="flex gap-1">
+            <p className="text-[12] md:text-lg">Sort By:  </p>
+            <input className="border-2 outline-none pl-2 w-[100px]" type="text" placeholder="Best Match " /> 
+            
+            </div>
             <div className="flex items-center gap-2">
-            <span className="text-xs">
+            {/* <span className="text-xs">
               Best Match 
-            </span>
+            </span> */}
             <FaAngleDown />
             </div>
          
