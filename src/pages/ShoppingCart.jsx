@@ -12,13 +12,24 @@ import { FaMinus } from "react-icons/fa6";
 import { FaPlus } from "react-icons/fa";
 import { FaEuroSign } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
-
+import { increment } from "../Components/slice/cartSlice";
+import { decrement } from "../Components/slice/cartSlice";
 // import SCurtReuse from "../Components/SCurtReuse";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const ShoppingCart = () => {
   let CartData = useSelector((state)=>state.cartItemSlice.cartItems)
 
+  const dispatch = useDispatch()
+
+  let handleIncrement = (item) => {
+    dispatch(increment(item));
+    
+  }
+  let handleDecrement = (item) => {
+    dispatch(decrement(item));
+    
+  }
   return (
     <>
       <section>
@@ -40,7 +51,7 @@ const ShoppingCart = () => {
 
 
             
-        {CartData.map((item)=>(
+        {CartData.map((item,index)=>(
               <div className="flex justify-between items-center py-4">
               <div className="w-[35%] flex flex-col md:flex-row gap-2">
               <img className="w-32 bg-[#EBEAEE] rounded-lg" src={item.thumbnail} alt="" />
@@ -55,9 +66,9 @@ const ShoppingCart = () => {
               </div>
               <div className="w-[25%] flex items-center">
                 <div className="flex gap-2 bg-gray-100">
-                  <p className="border-2 bg-gray-100 px-4 w-10 ">-</p>
-                  <p className="border-2 bg-gray-100 px-4 w-10 ">1</p>
-                  <p className="border-2 bg-gray-100 px-4 w-10 ">+</p>
+                  <p onClick={()=> handleDecrement(index)} className="border-2 bg-gray-100 px-4 w-10 ">-</p>
+                  <p className="border-2 bg-gray-100 px-4 w-10 ">{item.qty}</p>
+                  <p onClick={() => handleIncrement(index)} className="border-2 bg-gray-100 px-4 w-10 ">+</p>
                 </div>
               </div>
               <div className="w-[15%] flex items-center">
