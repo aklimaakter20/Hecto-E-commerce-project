@@ -72,7 +72,7 @@ const ShoppingCart = () => {
                 </div>
               </div>
               <div className="w-[15%] flex items-center">
-                <p>{item.price}</p>
+                <p>${(item.price * item.qty).toFixed(2)}</p>
               </div>
             </div>
         ))}
