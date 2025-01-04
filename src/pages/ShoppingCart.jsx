@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import PageHeading from "../Components/PageHeading";
 import Check from "../assets/check.png";
 import { RxCross2 } from "react-icons/rx";
 import { FaEuroSign } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
-import { deleteProduct, increment } from "../Components/slice/cartSlice";
+import { clearCart, deleteProduct, increment } from "../Components/slice/cartSlice";
 import { decrement } from "../Components/slice/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const ShoppingCart = () => {
   let CartData = useSelector((state)=>state.cartItemSlice.cartItems)
@@ -23,7 +24,13 @@ const ShoppingCart = () => {
   }
   let handleDeleteFromCart = (index)=>{
     dispatch(deleteProduct(index))
-    
+    setConfirm(true)
+ 
+  }
+  const [confirm, setConfirm] = useState(false)
+
+  const handleClearCart = ()=> {
+    dispatch(clearCart())
   }
   return (
     <>
@@ -45,43 +52,69 @@ const ShoppingCart = () => {
 
 
 
-            
-        {CartData.map((item,index)=>(
-              <div className="flex justify-between items-center py-4">
-              <div className="w-[35%] flex flex-col md:flex-row gap-2">
+            {CartData.length > 0 ? 
+              CartData.map((item,index)=>(
+                <div className="flex justify-between items-center py-4 relative">
+                <div className="w-[35%] flex flex-col md:flex-row gap-2">
+                  
+                  <div className="relative">
+                  <img className=" w-32 bg-[#EBEAEE] rounded-lg" src={item.thumbnail} alt="" />
+                  <div onClick={()=> setConfirm(true)}>
+                  <RxCross2 className="absolute top-2 right-2 cursor-pointer text-sm"/>
+  
+                  </div>
+                  </div>
+  
+               
+              
+                <div className="flex flex-col gap-1 justify-center">
+                  <h3 className="text-sm ">{item.title}</h3>
+                  <p className="text-sm">Color:Brown</p>
+                  <p className="text-sm">Size:Xl</p>
+                </div>
+                </div>
+                <div className="w-[15%] flex items-center">
+                  <p>${item.price}</p>
+                </div>
+                <div className="w-[25%] flex items-center">
+                  <div className="flex gap-2 bg-gray-100">
+                    <p onClick={()=> handleDecrement(index)} className="border-2 bg-gray-100 px-4 w-10 ">-</p>
+                    <p className="border-2 bg-gray-100 px-4 w-10 ">{item.qty}</p>
+                    <p onClick={() => handleIncrement(index)} className="border-2 bg-gray-100 px-4 w-10 ">+</p>
+                  </div>
+                </div>
+                <div className="w-[15%] flex items-center">
+                  <p>${(item.price * item.qty).toFixed(2)}</p>
+                </div>
+                {/* confirm delete part */}
+                 
+                {confirm && 
+                  <div className="absolute bg-white px-6 py-4 left-40">
+                  <p>Are you Sure delete the product?</p>
+                  <div>
+                  <button onClick={()=> handleDeleteFromCart(index)} className="bg-green-500 px-1 py-1 rounded-sm">Confirm</button>
+                  <button className="bg-red-500 px-1 py-1 rounded-sm">No</button>
+                  </div>
                 
-                <div className="relative">
-                <img className=" w-32 bg-[#EBEAEE] rounded-lg" src={item.thumbnail} alt="" />
-                <div onClick={()=> handleDeleteFromCart(index)}>
-                <RxCross2 className="absolute top-2 right-2 cursor-pointer text-sm"/>
+                </div>
+                }
+              
+              </div>
+          )) 
 
-                </div>
-                </div>
-
-             
-            
-              <div className="flex flex-col gap-1 justify-center">
-                <h3 className="text-sm ">{item.title}</h3>
-                <p className="text-sm">Color:Brown</p>
-                <p className="text-sm">Size:Xl</p>
-              </div>
-              </div>
-              <div className="w-[15%] flex items-center">
-                <p>${item.price}</p>
-              </div>
-              <div className="w-[25%] flex items-center">
-                <div className="flex gap-2 bg-gray-100">
-                  <p onClick={()=> handleDecrement(index)} className="border-2 bg-gray-100 px-4 w-10 ">-</p>
-                  <p className="border-2 bg-gray-100 px-4 w-10 ">{item.qty}</p>
-                  <p onClick={() => handleIncrement(index)} className="border-2 bg-gray-100 px-4 w-10 ">+</p>
-                </div>
-              </div>
-              <div className="w-[15%] flex items-center">
-                <p>${(item.price * item.qty).toFixed(2)}</p>
-              </div>
-            </div>
-        ))}
-    
+          : 
+           <div >
+            <Link to = '/shop'><button className="bg-primary text-white px-5 py-4 rounded-md cursor-pointer ">Go to Shop Page</button> </Link >
+           </div>
+          
+          }
+          {CartData.length > 0 && 
+             <div className="flex justify-around mt-20 ">
+             <button onClick={handleClearCart} className="bg-primary text-white px-5 py-4 rounded-md cursor-pointer">Clear Cart </button>
+             <button className="bg-primary text-white px-5 py-4 rounded-md cursor-pointer">Update Cart</button>
+           </div>
+          }
+         
             </div>
             <div className="right md:w-[25%]">
               <div className="">

@@ -18,7 +18,6 @@ const Navbar = () => {
     setMenuShow(!menuShow)
     
   }
-console.log(menuShow);
 
   let [input, setInput] = useState("")
   let [searchFilteredProducts, setSearchFilteredProducts] = useState([])
