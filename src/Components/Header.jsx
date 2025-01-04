@@ -4,10 +4,14 @@ import { FaPhoneVolume } from "react-icons/fa6";
 import { CiUser } from "react-icons/ci";
 import { FaRegHeart } from "react-icons/fa";
 import { FiShoppingCart } from "react-icons/fi";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  let cartItemsNumber = useSelector((state)=>state.cartItemSlice.cartItems)
+  
   return (
-    <header className="bg-[#7E33E0]">
+    <header className="bg-[#7E33E0]  ">
       <div className="container mx-auto">
         <div className="hidden md:flex items-center justify-between py-3 md:mr-6">
           <div className="flex items-center justify-between gap-4 text-white">
@@ -39,12 +43,15 @@ const Header = () => {
               <p>Login</p>
               <CiUser />
             </div>
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 ">
               <p>Wishlist</p>
               <FaRegHeart />
+              <h6>5</h6>
             </div>
-            <div>
-            <FiShoppingCart />
+            <div className="relative ">
+          <Link to = '/shoppingCart'><FiShoppingCart className=""/></Link>
+          <h6 className="absolute -top-4 -right-3 bg-red-500 w-5 h-5 flex items-center justify-center text-[12px] rounded-full">{cartItemsNumber.length}</h6>
+      
             </div>
           </div>
         </div>

@@ -37,7 +37,7 @@ console.log(menuShow);
   }
 
   return (
-    <nav className="py-4 bg-green-300 z-9">
+    <nav className="py-4 bg-green-300 z-9  ">
       <div className="container mx-auto ">
         <div className="flex justify-between items-center ">
           <div>
@@ -52,20 +52,19 @@ console.log(menuShow);
               <li className="pb-2 hover:font-semibold lg:hover:text-primary hover:text-[18px] duration-700"><Link to = '/shop'>Shop</Link></li>
               {/* <li className="hover:font-semibold hover:text-primary hover:text-[18px] bg-white duration-700"><Link to = '/shopList'>SList</Link></li> */}
               {/* <li className="hover:font-semibold hover:text-primary hover:text-[18px] bg-white duration-700"><Link to = '/shopSideBar'>Sidebar</Link></li> */}
-              {/* <li className="hover:font-semibold hover:text-primary hover:text-[18px] bg-white duration-700"><Link to = '/shoppingCart'>ShoppingCart</Link></li> */}
 
               <li className="pb-2 hover:font-semibold lg:hover:text-primary hover:text-[18px] duration-700">Contact</li>
               <li>      
                 <div className="flex items-center justify-center  ">
-                  <input onChange={handleInput} type="search" className="bg-transparent rounded-lg lg:w-56 w-36 h-10 border-2 outline-none pl-4"/>
+                  <input onChange={handleInput} type="search" className="bg-transparent rounded-sm lg:w-56 w-36 h-10 border-2 outline-none pl-4"/>
                   
                   {searchFilteredProducts.length > 0 && 
                   
-                  <div className="absolute top-12 z-30 left-0 ">
+                  <div className="absolute top-[120px] right-0 ">
                     {searchFilteredProducts.map((item)=>(
-                        <div className="flex flex-col gap-3 bg-white px-3 py-2 cursor-pointer hover:bg-[#FB2E86] hover:text-white duration-700 ease-in-out">
+                        <div className="flex flex-col gap-3 px-1 text-center py-1 cursor-pointer bg-white hover:bg-[#FB2E86] hover:text-white duration-700 ease-in-out">
                           <h4 className="py-1">{item.title}</h4>
-                          <img className="w-1/3 h-1/3 mx-auto" src={item.thumbnail} alt="" />
+                          <img className="w-1/6 h-1/6 mx-auto" src={item.thumbnail} alt="" />
                           <h6 className="font-sans text-[14px]">
                       ${item.price}
                     </h6>

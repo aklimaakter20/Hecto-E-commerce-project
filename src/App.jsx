@@ -7,7 +7,7 @@ import RootLayout from './Components/RootLayout';
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 import ShopList from './pages/ShopList';
 import ShopSideBar from './pages/ShopSideBar';
-import ShoppingCurt from './pages/ShoppingCurt';
+import ShoppingCurt from './pages/ShoppingCart';
 
 
 function App() {

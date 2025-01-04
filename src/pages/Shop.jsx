@@ -51,7 +51,7 @@ const Shop = () => {
   };
 
   let [currentPage, setCurrentPage] = useState(1);
-  let [perPage, setPerPage] = useState(15);
+  let [perPage, setPerPage] = useState(25);
 
   let lastItemIndex = currentPage * perPage;
   let firstItemIndex = lastItemIndex - perPage;
@@ -78,6 +78,7 @@ const Shop = () => {
     }
   };
 
+  // user er kache data pathate useDispatch use hoy
   let dispatch = useDispatch();
 
   const handleAddToCart = (product) => {
@@ -198,6 +199,7 @@ const Shop = () => {
                     <h6 className="font-sans text-[14px] text-[#151875] group-hover:text-white">
                       ${item.price}
                     </h6>
+                   
                   </div>
                 </div>
               ))
@@ -254,14 +256,14 @@ const Shop = () => {
               
             : perPageProduct.map((item) => (
                 <div className="  shadow-2xl group m-6">
-                  <div className="relative bg-[#F6F7FB] flex flex-col sm:flex-row gap-3 items-center justify-center py-12 overflow-hidden">
+                  <div className="relative bg-[#EBEAEE] flex flex-col sm:flex-row gap-3 items-center justify-center py-12 overflow-hidden">
                     <img className="w-48" src={item.thumbnail} alt="" />
-                    <div className="flex gap-2 absolute -left-20 top-0 duration-1000 ease-in-out group-hover:left-10 ">
-                      <FaRegHeart className="text-[#05E6B7] hover:text-[#2F1AC4]" />
-                      <LuShoppingCart className="text-[#05E6B7] hover:text-[#2F1AC4]" />
-                      <MdOutlineZoomIn className="text-[#05E6B7] hover:text-[#2F1AC4]" />
+                    <div className="flex py-4 gap-2 absolute -left-20 top-0 duration-1000 ease-in-out group-hover:left-10 ">
+                      <FaRegHeart className="text-primary hover:text-[#08D15F]" />
+                      <LuShoppingCart className="text-primary hover:text-[#08D15F]" />
+                      <MdOutlineZoomIn className="text-primary hover:text-[#08D15F]" />
                     </div>
-                    <button className="absolute -bottom-16 group-hover:bottom-4 duration-1000 bg-[#08D15F] px-4 py-2 rounded-sm text-xs text-white">
+                    <button className="absolute -bottom-16 group-hover:bottom-4 duration-1000 bg-[#08D15F] hover:bg-primary px-4 py-2 rounded-sm text-xs text-white">
                       View Details
                     </button>
                   </div>
@@ -275,7 +277,7 @@ const Shop = () => {
                     </h6>
                     <button
                       onClick={() => handleAddToCart(item)}
-                      className="bg-primary text-white w-full py-2"
+                      className="bg-primary text-white w-full py-1 hover:bg-[#08D15F] duration-700 ease-in-out"
                     >
                       Add to Cart
                     </button>
@@ -285,12 +287,12 @@ const Shop = () => {
         </div>
       </div>
       <div>
-        <ul className="flex items-center justify-center gap-5">
+        <ul className="flex items-center justify-center gap-5 cursor-pointer">
           <li onClick={handlePrevPage}>Prev</li>
           {numbers.map((item) => (
             <li
               className={`border-2 px-5 py-2 ${
-                currentPage === item ? "bg-[#FB2E86] text-white" : ""
+                currentPage === item ? "bg-[#FB2E86] text-white " : ""
               }`}
               onClick={() => setCurrentPage(item)}
             >
