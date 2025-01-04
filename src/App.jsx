@@ -8,6 +8,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import ShopList from './pages/ShopList';
 import ShopSideBar from './pages/ShopSideBar';
 import ShoppingCurt from './pages/ShoppingCart';
+import ProductDetails from './pages/ProductDetails';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path='/shopList' element= {<ShopList/>}/>
         <Route path='/shopSideBar' element= {<ShopSideBar/>}/>
         <Route path='/shoppingCart' element= {<ShoppingCurt />}/>
+        <Route path = '/shop/:id' element= {<ProductDetails />}/>
       </Route>
     )
   );

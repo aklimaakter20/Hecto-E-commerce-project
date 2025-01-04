@@ -5,6 +5,7 @@ import { MdOutlineZoomIn } from "react-icons/md";
 import Slider from 'react-slick';
 import './Featured.css'
 import { apiData } from './ContextApi'
+import { Link } from "react-router-dom";
 
 const Featured = () => {
 
@@ -64,7 +65,7 @@ const Featured = () => {
                 <LuShoppingCart className='text-[#05E6B7] hover:text-[#2F1AC4]' />
                 <MdOutlineZoomIn className='text-[#05E6B7] hover:text-[#2F1AC4]' />
                 </div>
-                <button className='absolute -bottom-16 group-hover:bottom-4 duration-1000 bg-[#08D15F] px-4 py-2 rounded-sm text-xs text-white'>View Details</button>
+                <button className='absolute -bottom-16 group-hover:bottom-4 duration-1000 bg-[#08D15F] px-4 py-2 rounded-sm text-xs text-white'><Link to = {`/shop/${item.id}`}>View Details</Link></button>
             </div>
             <div className='text-center py-5 group-hover:bg-[#151875] duration-700 ease-in-out group-hover:shadow-2xl'>
                 <h3 className='text-primary font-bold text-sm font-lato pb-2 group-hover:text-white'>{item.title}</h3>
