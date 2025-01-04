@@ -1,20 +1,11 @@
 import React from "react";
 import PageHeading from "../Components/PageHeading";
-import HandBag1 from "../assets/handbag1.png";
-
-// import HandBag2 from "../assets/handbag2.png";
-// import HandBag3 from "../assets/handbag3.png";
-// import HandBag4 from "../assets/handbag4.png";
-// import HandBag5 from "../assets/handbag5.png";
 import Check from "../assets/check.png";
 import { RxCross2 } from "react-icons/rx";
-import { FaMinus } from "react-icons/fa6";
-import { FaPlus } from "react-icons/fa";
 import { FaEuroSign } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
-import { increment } from "../Components/slice/cartSlice";
+import { deleteProduct, increment } from "../Components/slice/cartSlice";
 import { decrement } from "../Components/slice/cartSlice";
-// import SCurtReuse from "../Components/SCurtReuse";
 import { useDispatch, useSelector } from "react-redux";
 
 const ShoppingCart = () => {
@@ -28,6 +19,10 @@ const ShoppingCart = () => {
   }
   let handleDecrement = (item) => {
     dispatch(decrement(item));
+    
+  }
+  let handleDeleteFromCart = (index)=>{
+    dispatch(deleteProduct(index))
     
   }
   return (
@@ -54,7 +49,17 @@ const ShoppingCart = () => {
         {CartData.map((item,index)=>(
               <div className="flex justify-between items-center py-4">
               <div className="w-[35%] flex flex-col md:flex-row gap-2">
-              <img className="w-32 bg-[#EBEAEE] rounded-lg" src={item.thumbnail} alt="" />
+                
+                <div className="relative">
+                <img className=" w-32 bg-[#EBEAEE] rounded-lg" src={item.thumbnail} alt="" />
+                <div onClick={()=> handleDeleteFromCart(index)}>
+                <RxCross2 className="absolute top-2 right-2 cursor-pointer text-sm"/>
+
+                </div>
+                </div>
+
+             
+            
               <div className="flex flex-col gap-1 justify-center">
                 <h3 className="text-sm ">{item.title}</h3>
                 <p className="text-sm">Color:Brown</p>
