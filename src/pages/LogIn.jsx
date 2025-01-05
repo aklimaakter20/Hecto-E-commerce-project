@@ -8,10 +8,42 @@ const LogIn = () => {
     let [email, setEmail] = useState('')
     let [password, setPassword] = useState('')
     let [errorMessage, setErrorMessage] = useState('')
+    let [errorMessage2, setErrorMessage2] = useState('')
   
+const handleEmail = (e) => {
+    setEmail(e.target.value)
+
+}
+const handleSubmit = () => {
+
+    if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+        console.log("Enter Your valid Email");
+        
+    }
+    if(!email){
+        setErrorMessage("Enter Your Email")
+    }
+    if(!password ){
+        setErrorMessage2("Enter Your password")
+        
+
+        }else if(!/(?=.*[a-z])/.test(password)){
+            setErrorMessage2("password er moddhe lower case de")
+        }else if(!/(?=.*[A-Z])/.test(password)){
+            setErrorMessage2("password er moddhe upper case de")
+        }else if(!/(?=.*[0-9])/.test(password)){
+            setErrorMessage2("password er moddhe number de")
+        }else{
+            
+        }
+    
+     
 
 
-createUserWithEmailAndPassword(auth, email, password)
+if(email && password && !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+
+}
+    createUserWithEmailAndPassword(auth, email, password)
   .then(() => {
         console.log("Authentication done");
         
@@ -19,11 +51,13 @@ createUserWithEmailAndPassword(auth, email, password)
   .catch((error) => {
 
     const err = error.code
+    console.log(err);
     
-    if(err.includes('auth/invalid-email')){
-        setErrorMessage("Email is not valid")
-    }
+   
   });
+}
+console.log(errorMessage);
+
 
 
   return (
@@ -37,12 +71,19 @@ createUserWithEmailAndPassword(auth, email, password)
             <p className='text-sm text-[#9096B2] text-center'>Please login using account detail bellow.</p>
           </div>
           <div className='text-center'>
-            <input onChange={(e)=> setEmail(e.target.value)} className='border-2 border-gray-300 p-2 w-1/3 m-2 outline-none' type="email" placeholder='Enter Your Email' /> <br />
-            <p>{errorMessage}</p>
+            <input onChange={handleEmail} className='border-2 border-gray-300 p-2 w-1/3 m-2 outline-none' type="email" placeholder='Enter Your Email' /> <br />
+            {
+                errorMessage && 
+                <p className='bg-primary text-white py-4 w-1/3 mx-auto'>{errorMessage}</p>
+
+            }
 
             <input onChange={(e)=> setPassword(e.target.value)} className='border-2 border-gray-300 p-2 w-1/3 m-2 outline-none' type="Password" placeholder='Enter Your Password' />
-            <p>Forgot your password?</p>
-            <input  className='bg-primary p-2 w-1/3 m-2 outline-none text-center text-white' type="text" placeholder='SignIn'  />
+            {errorMessage2 && 
+            <p>{errorMessage2}</p>
+            }
+            <p className='mt-5'>Forgot your password?</p>
+            <button onClick={handleSubmit} className='bg-primary my-5 cursor-pointer text-white w-1/3 py-2 rounded-sm'>SignUp</button>
             <p>Don’t have an Account?Create account</p>
           </div>
           
