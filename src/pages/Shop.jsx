@@ -61,9 +61,8 @@ const Shop = () => {
   // console.log(perPageProduct);
 
   let pageNumbers = Math.ceil(data.length / perPage);
-  // console.log(pageNumbers);
-
-  let numbers = useState([]);
+  
+  let numbers = [];
   for (let i = 1; i <= pageNumbers; i++) {
     numbers.push(i);
   }

@@ -32,6 +32,17 @@ const ShoppingCart = () => {
   const handleClearCart = ()=> {
     dispatch(clearCart())
   }
+
+
+  let {totalPrice, totalQty } = CartData.reduce((acc, item)=>{
+    acc.totalPrice += (item.price *item.qty);
+    acc.totalQty +=  item.qty;
+    return acc;
+  }, {totalPrice: 0, totalQty: 0})
+
+  console.log(totalPrice,totalQty);
+  
+  
   return (
     <>
       <section>
@@ -114,7 +125,7 @@ const ShoppingCart = () => {
              <button className="bg-primary text-white px-5 py-4 rounded-md cursor-pointer">Update Cart</button>
            </div>
           }
-         
+                  
             </div>
             <div className="right md:w-[25%]">
               <div className="">
@@ -124,18 +135,18 @@ const ShoppingCart = () => {
                 <div className=" bg-[#F4F4FC] px-8 py-4 rounded-sm mt-5 shadow-lg space-y-5">
                   <div className="border-b-2 flex gap-20 border-[#E8E6F1]">
                     <p className="text-secondary font-semibold text-lg">
-                      Subtotals:
+                      Total Price:
                     </p>
                     <span className="text-secondary font-semibold text-lg">
-                      £219.00
+                      ${(totalPrice).toFixed(2)}
                     </span>
                   </div>
                   <div className="border-b-2 flex gap-20 border-[#E8E6F1]">
                     <p className="text-secondary font-semibold text-lg">
-                      Totals:
+                      Total Quantity:
                     </p>
                     <span className="text-secondary font-semibold text-lg">
-                      £325.00
+                      {totalQty}
                     </span>
                   </div>
                   <div className="flex gap-2 items-center">
@@ -182,3 +193,4 @@ const ShoppingCart = () => {
 };
 
 export default ShoppingCart;
+ 
