@@ -9,7 +9,8 @@ import ShopList from './pages/ShopList';
 import ShopSideBar from './pages/ShopSideBar';
 import ShoppingCurt from './pages/ShoppingCart';
 import ProductDetails from './pages/ProductDetails';
-
+import LogIn from './pages/LogIn';
+import Contact from './pages/Contact';
 
 function App() {
   let myRouter = createBrowserRouter(
@@ -21,6 +22,8 @@ function App() {
         <Route path='/shopSideBar' element= {<ShopSideBar/>}/>
         <Route path='/shoppingCart' element= {<ShoppingCurt />}/>
         <Route path = '/shop/:id' element= {<ProductDetails />}/>
+        <Route path = 'LogIn' element = {<LogIn />}/>
+        <Route path = 'Contact' element = {<Contact/>}></Route>
       </Route>
     )
   );

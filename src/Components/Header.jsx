@@ -40,8 +40,8 @@ const Header = () => {
             </div>
 
             <div className="flex items-center gap-1">
-              <p>Login</p>
-              <CiUser />
+              <Link to = '/LogIn'><p>Login</p></Link>
+              <Link to = '/LogIn'><CiUser /></Link>
             </div>
             <div className="flex items-center gap-1 ">
               <p>Wishlist</p>

@@ -52,7 +52,7 @@ const Navbar = () => {
               {/* <li className="hover:font-semibold hover:text-primary hover:text-[18px] bg-white duration-700"><Link to = '/shopList'>SList</Link></li> */}
               {/* <li className="hover:font-semibold hover:text-primary hover:text-[18px] bg-white duration-700"><Link to = '/shopSideBar'>Sidebar</Link></li> */}
 
-              <li className="pb-2 hover:font-semibold lg:hover:text-primary hover:text-[18px] duration-700">Contact</li>
+              <li className="pb-2 hover:font-semibold lg:hover:text-primary hover:text-[18px] duration-700"><Link to = '/contact'>Contact </Link></li>
               <li>      
                 <div className="flex items-center justify-center  ">
                   <input onChange={handleInput} type="search" className="bg-transparent rounded-sm lg:w-56 w-36 h-10 border-2 outline-none pl-4"/>

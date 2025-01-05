@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import './index.css'
 import App from './App.jsx'
 import { ContextApi } from './Components/ContextApi.jsx';
-
+import firebaseConfig from './pages/firebase.config.js';
 import store from './store.js';
 import { Provider } from 'react-redux';
 
