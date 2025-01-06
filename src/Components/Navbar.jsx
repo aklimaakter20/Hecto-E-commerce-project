@@ -45,7 +45,7 @@ const Navbar = () => {
           <div className="">
             <ul className={`lg:flex lg:gap-10 lg:items-center lg:static  ${menuShow == true ?  'absolute top-16 left-0 duration-1000 ease-in-out w-full h-[300px] bg-primary text-center text-white z-20 p-6 ' : 'absolute top-16 -left-80 w-full '}`}>
               <li className="pb-2 hover:font-semibold lg:hover:text-primary hover:text-[18px] duration-700"><Link to = '/'>Home</Link></li>
-              <li className="pb-2 hover:font-semibold lg:hover:text-primary hover:text-[18px] duration-700">Pages</li>
+              <li className="pb-2 hover:font-semibold lg:hover:text-primary hover:text-[18px] duration-700"><Link to = '/aboutUs'>About Us</Link></li>
               <li className="pb-2 hover:font-semibold lg:hover:text-primary hover:text-[18px] duration-700">Products</li>
               <li className="pb-2 hover:font-semibold lg:hover:text-primary hover:text-[18px] duration-700">Blog</li>
               <li className="pb-2 hover:font-semibold lg:hover:text-primary hover:text-[18px] duration-700"><Link to = '/shop'>Shop</Link></li>

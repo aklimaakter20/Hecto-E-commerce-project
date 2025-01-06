@@ -10,14 +10,15 @@ export const cartSlice = createSlice({
     addToCart: (state,action) => {
         let findProducts = state.cartItems.findIndex((item)=> item.id === action.payload.id);
         
-
+      // if the product is not found, add it to the cart
         if(findProducts === -1 ){
             state.cartItems.push(action.payload)
             localStorage.setItem("cart",JSON.stringify(state.cartItems))
         }else{
+          // if the product is found, increment the qty
             state.cartItems[findProducts].qty += 1;
             localStorage.setItem("cart",JSON.stringify(state.cartItems))
-
+            // Always update localstorage after any change
         }  
     },
     increment: (state, action) => {

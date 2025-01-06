@@ -10,8 +10,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const ShoppingCart = () => {
-  let CartData = useSelector((state)=>state.cartItemSlice.cartItems)
 
+  // redux theke data nea aste useSelector use hoy
+
+  let CartData = useSelector((state)=>state.cartItemSlice.cartItems)
+  // redux theke data nea aste useDispatch use hoy
   const dispatch = useDispatch()
 
   let handleIncrement = (item) => {

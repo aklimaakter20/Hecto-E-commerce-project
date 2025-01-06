@@ -11,12 +11,15 @@ import ShoppingCurt from './pages/ShoppingCart';
 import ProductDetails from './pages/ProductDetails';
 import LogIn from './pages/LogIn';
 import Contact from './pages/Contact';
+import AboutUs from './pages/AboutUs';
+
 
 function App() {
   let myRouter = createBrowserRouter(
     createRoutesFromElements(
       <Route element= {<RootLayout />}>
         <Route path="/" element={<Home />} />
+        <Route path='/aboutUs' element= {<AboutUs/>}/>
         <Route path="/shop" element={<Shop />}/>
         <Route path='/shopList' element= {<ShopList/>}/>
         <Route path='/shopSideBar' element= {<ShopSideBar/>}/>
