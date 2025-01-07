@@ -47,7 +47,7 @@ const Navbar = () => {
               <li className="pb-2 hover:font-semibold lg:hover:text-primary hover:text-[18px] duration-700"><Link to = '/'>Home</Link></li>
               <li className="pb-2 hover:font-semibold lg:hover:text-primary hover:text-[18px] duration-700"><Link to = '/aboutUs'>About Us</Link></li>
               <li className="pb-2 hover:font-semibold lg:hover:text-primary hover:text-[18px] duration-700">Products</li>
-              <li className="pb-2 hover:font-semibold lg:hover:text-primary hover:text-[18px] duration-700">Blog</li>
+              <li className="pb-2 hover:font-semibold lg:hover:text-primary hover:text-[18px] duration-700"><Link to = '/blog'>Blog</Link></li>
               <li className="pb-2 hover:font-semibold lg:hover:text-primary hover:text-[18px] duration-700"><Link to = '/shop'>Shop</Link></li>
               {/* <li className="hover:font-semibold hover:text-primary hover:text-[18px] bg-white duration-700"><Link to = '/shopList'>SList</Link></li> */}
               {/* <li className="hover:font-semibold hover:text-primary hover:text-[18px] bg-white duration-700"><Link to = '/shopSideBar'>Sidebar</Link></li> */}
