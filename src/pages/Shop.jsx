@@ -78,7 +78,6 @@ const Shop = () => {
     }
   };
 
-  // user er kache data pathate useDispatch use hoy
   let dispatch = useDispatch();
 
   const handleAddToCart = (product) => {

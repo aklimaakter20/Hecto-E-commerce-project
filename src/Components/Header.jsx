@@ -50,7 +50,7 @@ const Header = () => {
             </div>
             <div className="relative ">
           <Link to = '/shoppingCart'><FiShoppingCart className=""/></Link>
-          <h6 className="absolute -top-4 -right-3 bg-red-500 w-5 h-5 flex items-center justify-center text-[12px] rounded-full">{cartItemsNumber.length}0</h6>
+          <h6 className="absolute -top-4 -right-3 bg-red-500 w-5 h-5 flex items-center justify-center text-[12px] rounded-full">{cartItemsNumber.length}</h6>
       
             </div>
           </div>
