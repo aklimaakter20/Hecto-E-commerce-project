@@ -36,14 +36,14 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="py-4 bg-green-300 z-9  ">
+    <nav className="py-4 bg-white z-9  ">
       <div className="container mx-auto ">
         <div className="flex justify-between items-center ">
           <div>
-            <img className="" src={Logo} alt="" />
+            <img className="p-4 sm:p-0" src={Logo} alt="" />
           </div>
           <div className="">
-            <ul className={`lg:flex lg:gap-10 lg:items-center lg:static  ${menuShow == true ?  'absolute top-16 left-0 duration-1000 ease-in-out w-full h-[300px] bg-primary text-center text-white z-20 p-6 ' : 'absolute top-16 -left-80 w-full '}`}>
+            <ul className={`lg:flex lg:gap-10 lg:items-center lg:static  ${menuShow == true ?  'absolute top-16 left-0 duration-1000 ease-in-out w-full h-full bg-white text-center text-primary z-20 p-6 ' : 'absolute top-16 -left-96 sm:-left-96 md:-left-[1000px] w-full '}`}>
               <li className="pb-2 hover:font-semibold lg:hover:text-primary hover:text-[18px] duration-700"><Link to = '/'>Home</Link></li>
               <li className="pb-2 hover:font-semibold lg:hover:text-primary hover:text-[18px] duration-700"><Link to = '/aboutUs'>About Us</Link></li>
               <li className="pb-2 hover:font-semibold lg:hover:text-primary hover:text-[18px] duration-700">Products</li>
@@ -79,8 +79,8 @@ const Navbar = () => {
               </ul>
               </div>
         
-                <div onClick={handleMenu} className="lg:hidden" >
-                  {menuShow === true ? <RxCross2 /> : <FaBars/>}
+                <div onClick={handleMenu} className="md:hidden cursor-pointer" >
+                  {menuShow === true ? <RxCross2 /> : <FaBars />}
                 </div>
                       
 
