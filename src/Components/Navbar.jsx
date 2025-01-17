@@ -43,7 +43,7 @@ const Navbar = () => {
             <img className="p-4 sm:p-0" src={Logo} alt="" />
           </div>
           <div className="">
-            <ul className={`lg:flex lg:gap-10 lg:items-center lg:static  ${menuShow == true ?  'absolute top-16 left-0 duration-1000 ease-in-out w-full h-full bg-white text-center text-primary z-20 p-6 ' : 'absolute top-16 -left-96 sm:-left-96 md:-left-[1000px] w-full '}`}>
+            <ul className={`lg:flex lg:gap-10 lg:items-center lg:static  ${menuShow == true ?  'absolute top-16 left-0 duration-1000 ease-in-out w-full h-full bg-white text-center text-primary z-20 p-6 ' : 'absolute top-16 -left-[1000px] w-full '}`}>
               <li className="pb-2 hover:font-semibold lg:hover:text-primary hover:text-[18px] duration-700"><Link to = '/'>Home</Link></li>
               <li className="pb-2 hover:font-semibold lg:hover:text-primary hover:text-[18px] duration-700"><Link to = '/aboutUs'>About Us</Link></li>
               <li className="pb-2 hover:font-semibold lg:hover:text-primary hover:text-[18px] duration-700">Products</li>

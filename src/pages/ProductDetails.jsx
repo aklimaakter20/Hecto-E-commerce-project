@@ -27,22 +27,22 @@ const ProductDetails = () => {
           <PageHeading heading="Product Details" pageName="Product Details" />
         </div>
       {singleProduct.map((item)=>(
-          <div className="flex items-center gap-10">
-          <div className="flex gap-5 ">
+          <div className="flex flex-col md:flex-row items-center justify-around gap-10">
+          <div className="flex items-center gap-5 mx-10">
             <div className="flex flex-col gap-5">
-              <img src={BagSmall} alt="" />
-              <img src={BagSmall2} alt="" />
-              <img src={BagSmall3} alt="" />
+              <img className='w-20 lg:w-32 ' src={BagSmall} alt="" />
+              <img className='w-20 lg:w-32 ' src={BagSmall2} alt="" />
+              <img className='w-20 lg:w-32 ' src={BagSmall3} alt="" />
             </div>
             <div>
               <img src={item.thumbnail} alt="" />
             </div>
           </div>
-          <div>
+          <div className='mx-10'>
             <h2 className="text-xl sm:text-2xl lg:text-3xl">
               {item.title}
             </h2>
-            <div className="flex gap-2 text-[#FFC416]">
+            <div className="flex gap-2 mx-auto text-[#FFC416]">
               <FaStar />
               <FaStar />
               <FaStar />
