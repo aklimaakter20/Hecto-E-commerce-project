@@ -44,9 +44,12 @@ const Header = () => {
               <Link to = '/LogIn'><CiUser /></Link>
             </div>
             <div className="flex items-center gap-1 ">
+              <Link to='/wishCard'>
+              
               <p>Wishlist</p>
               <FaRegHeart />
               <h6>5</h6>
+              </Link>
             </div>
             <div className="relative ">
           <Link to = '/shoppingCart'><FiShoppingCart className=""/></Link>

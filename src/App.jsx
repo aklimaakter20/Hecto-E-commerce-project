@@ -13,6 +13,7 @@ import LogIn from './pages/LogIn';
 import Contact from './pages/Contact';
 import AboutUs from './pages/AboutUs';
 import Blog from './pages/Blog';
+import WishCard from './pages/WishCard';
 
 function App() {
   let myRouter = createBrowserRouter(
@@ -26,6 +27,8 @@ function App() {
         <Route path='/shopList' element= {<ShopList/>}/>
         <Route path='/shopSideBar' element= {<ShopSideBar/>}/>
         <Route path='/shoppingCart' element= {<ShoppingCurt />}/>
+        <Route path='/wishCard' element= {<WishCard />}/>
+
         <Route path = '/shop/:id' element= {<ProductDetails />}/>
         <Route path = '/LogIn' element = {<LogIn />}/>
         <Route path = '/Contact' element = {<Contact/>}></Route>

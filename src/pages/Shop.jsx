@@ -10,6 +10,8 @@ import { MdOutlineArrowDropDown } from "react-icons/md";
 import AllLogo from "../Components/AllLogo";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../Components/slice/cartSlice";
+import { addWishList } from "../Components/slice/wishSlice";
+
 import { ToastContainer, toast } from 'react-toastify';
 
 const Shop = () => {
@@ -85,6 +87,11 @@ const Shop = () => {
     dispatch(addToCart({ ...product, qty: 1 }));
     toast.success("added to Cart")
   };
+  const handleAddToWish = (product) => {
+    dispatch(addWishList({ ...product, qty: 1 }));
+    toast.success("added to Cart")
+  };
+
 
   return (
     <div className="container mx-auto">

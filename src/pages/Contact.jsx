@@ -12,10 +12,10 @@ import GroupImg from '../assets/GroupImg.png'
 const Contact = () => {
   return (
     <section>
-        <div className="container mx-auto">
         <div>
             <PageHeading heading="Contact Us" pageName="Contact Us" />
           </div>
+        <div className="container mx-auto">
           <div className='flex items-center gap-20 mt-20'>
             <div className='w-1/2'>
                 <h2 className='text-[#151875] text-xl sm:text-2xl lg:text-3xl font-bold mb-8'>Information About us</h2>

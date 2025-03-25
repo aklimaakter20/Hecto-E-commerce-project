@@ -6,6 +6,13 @@ import Slider from 'react-slick';
 import './Featured.css'
 import { apiData } from './ContextApi'
 import { Link } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+
+import { ToastContainer, toast } from 'react-toastify';
+
+import { addWishList } from "../Components/slice/wishSlice";
+
+
 
 const Featured = () => {
 
@@ -46,6 +53,18 @@ const Featured = () => {
   
    let info = useContext(apiData)
   let filterProduct = info.filter((item) => item.id >= 20 && item.id <= 25)
+
+
+   let dispatch= useDispatch()
+
+ 
+  const handelWishCard = (item) => {
+    dispatch(addWishList(item))
+    toast.success("added to wish")
+    console.log(item);
+    
+   
+  };
    
     return (
       <>
@@ -61,7 +80,20 @@ const Featured = () => {
                
                 <img  src={item.thumbnail} alt="" />
                 <div className='flex gap-2 absolute -left-20 top-0 duration-1000 ease-in-out group-hover:left-10 '>
-                <FaRegHeart className='text-[#05E6B7] hover:text-[#2F1AC4]' />
+                <FaRegHeart onClick={()=>{handelWishCard(item)}} className='text-[#05E6B7] hover:text-[#2F1AC4]' />
+                <ToastContainer
+                    position="top-center"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick={false}
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="light"
+                    
+                     />
                 <LuShoppingCart className='text-[#05E6B7] hover:text-[#2F1AC4]' />
                 <MdOutlineZoomIn className='text-[#05E6B7] hover:text-[#2F1AC4]' />
                 </div>
