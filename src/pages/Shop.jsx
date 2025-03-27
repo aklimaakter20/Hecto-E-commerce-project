@@ -87,9 +87,14 @@ const Shop = () => {
     dispatch(addToCart({ ...product, qty: 1 }));
     toast.success("added to Cart")
   };
-  const handleAddToWish = (product) => {
-    dispatch(addWishList({ ...product, qty: 1 }));
-    toast.success("added to Cart")
+
+   
+  const handelWishCard = (item) => {
+    dispatch(addWishList(item))
+    toast.success("added to wish")
+    console.log(item);
+    
+   
   };
 
 
@@ -267,8 +272,8 @@ const Shop = () => {
                   <div className="relative bg-[#EBEAEE] flex flex-col sm:flex-row gap-3 items-center justify-center py-12 overflow-hidden">
                     <img className="w-48" src={item.thumbnail} alt="" />
                     <div className="flex py-4 gap-2 absolute -left-20 top-0 duration-1000 ease-in-out group-hover:left-10 ">
-                      <FaRegHeart className="text-primary hover:text-[#08D15F]" />
-                      <LuShoppingCart className="text-primary hover:text-[#08D15F]" />
+                      <FaRegHeart onClick={()=>{handelWishCard(item)}} className="text-primary hover:text-[#08D15F]" />
+                      <LuShoppingCart onClick={() => handleAddToCart(item)} className="text-primary hover:text-[#08D15F]" />
                       <MdOutlineZoomIn className="text-primary hover:text-[#08D15F]" />
                     </div>
                     <button className="absolute -bottom-16 group-hover:bottom-4 duration-1000 bg-[#08D15F] hover:bg-primary px-4 py-2 rounded-sm text-xs text-white">
