@@ -57,10 +57,11 @@ const ShoppingCart = () => {
   return (
     <>
       <section>
-        <div className="container mx-auto">
-          <div>
+      <div>
             <PageHeading heading="Shopping Curt" pageName="shopping curt" />
           </div>
+        <div className="container mx-auto">
+         
 
           <div className="flex">
             <div>

@@ -1,76 +1,54 @@
-import React, { useState } from "react";
-import PageHeading from "../Components/PageHeading";
-import Check from "../assets/check.png";
-import { RxCross2 } from "react-icons/rx";
-import { FaEuroSign } from "react-icons/fa";
-import { MdClose } from "react-icons/md";
-import {
-  clearCart,
-  deleteProduct,
-  increment,
-} from "../Components/slice/cartSlice";
-import { decrement } from "../Components/slice/cartSlice";
-import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { FaShoppingCart } from "react-icons/fa";
+// import { FaSearchDollar } from "react-icons/fa";
+// import { CiHeart } from "react-icons/ci";
+// import { addtoCard } from '../Slice/cardSlice';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const WishCard = () => {
-  const [handleDelete, setHandleDelete] = useState(false);
-  let WishData = useSelector((state) =>  state.wishItemSlice.wishItem);
+  let wishlistData = useSelector((state) => state.wishItemSlice.wishItem);
 
-  console.log(WishData);
+  // added item in cardslice  start
 
-  //   const dispatch = useDispatch();
-
-  //   const handleDeleteShow = (id) => {
-  //     if (handleDelete === id) {
-  //         setHandleDelete(null);
-  //       } else {
-  //         setHandleDelete(id);
-  //       }
-  // }
-  //   let handleIncrement = (item) => {
-  //     dispatch(increment(item));
-  //   };
-  //   let handleDecrement = (item) => {
-  //     dispatch(decrement(item));
-  //   };
-  //   let handleDeleteFromCart = (index) => {
-  //     dispatch(deleteProduct(index));
-  //     setConfirm(true);
-  //   };
-  //   const [confirm, setConfirm] = useState(false);
-
-  //   const handleClearCart = () => {
-  //     dispatch(clearCart());
-  //   };
-
-  //   let { totalPrice, totalQty } = CartData.reduce(
-  //     (acc, item) => {
-  //       acc.totalPrice += item.price * item.qty;
-  //       acc.totalQty += item.qty;
-  //       return acc;
-  //     },
-  //     { totalPrice: 0, totalQty: 0 }
-  //   );
-
-  //   console.log(totalPrice, totalQty);
+  let dispatch = useDispatch();
+  const cardHandel = (item) => {
+    dispatch(addtoCard({ ...item, Qont: 1 }));
+    toast("Item Added  !");
+  };
+  // added item in cardslice  end
 
   return (
     <section>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias ab
-        nobis aspernatur, ipsam consequatur tempore sint commodi ullam
-        blanditiis. Impedit praesentium eum laborum suscipit dolore magnam eaque
-        deserunt molestias optio.
-      </div>
-      <div>
-        {WishData.map((item,inex)=>(
-            <div className="w-[200px] mx-auto">
-                <img src={item.images} alt="" />
+      <div className="container mx-auto">
+        <div>
+          {wishlistData.map((item, index) => (
+            <div key={index} className="flex flex-col justify-center gap-4 md:flex-row items-center shadow-md my-5 group bg-gray-100">
+              <img
+                className="w-40 md:w-fit group-hover:bg-gray-200 px-1 py-1 rounded-md"
+                src={item.thumbnail}
+                alt="image"
+              />
+              <div className="px-2 py-2 flex flex-col items-center md:items-start">
+                <h2>{item.title}</h2>
+                <div className="py-2 flex flex-col items-center md:items-start">
+                  <p>
+                    ${item.price}
+                    <span className="line-through px-2 text-orange-400">
+                      ${Math.ceil(item.price + 10)}
+                    </span>
+                    <span>({item.stock})</span>
+                  </p>
+                  <p className='py-1'>ReturnPolicy:  {item.returnPolicy}</p>
+                  <div></div>
+                  <p className="text-sm w-11/12 mx-auto md:mx-0">{item.description}</p>
+                </div>
+               
+              </div>
             </div>
-        ))
-
-        }
+          ))}
+        </div>
       </div>
     </section>
   );
