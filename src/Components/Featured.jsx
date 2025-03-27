@@ -66,11 +66,10 @@ const Featured = () => {
     
    
   };
-    const handleAddToCart = (product) => {
-      dispatch(addToCart({ ...product, qty: 1 }));
-      toast.success("added to Cart")
-    };
- 
+   const handleAddToCart = (product) => {
+     dispatch(addToCart({ ...product, qty: 1 }));
+     toast.success("added to Cart")
+   };
    
     return (
       <>
@@ -101,19 +100,19 @@ const Featured = () => {
                     
                      />
                 <LuShoppingCart onClick={() => handleAddToCart(item)} className='text-[#05E6B7] hover:text-[#2F1AC4]' />
-                 <ToastContainer
-                                   position="top-center"
-                                   autoClose={5000}
-                                   hideProgressBar={false}
-                                   newestOnTop={false}
-                                   closeOnClick={false}
-                                   rtl={false}
-                                   pauseOnFocusLoss
-                                   draggable
-                                   pauseOnHover
-                                   theme="light"
-                                   
-                                    />
+                <ToastContainer
+                    position="top-center"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick={false}
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="light"
+                    
+                     />
                 <MdOutlineZoomIn className='text-[#05E6B7] hover:text-[#2F1AC4]' />
                 </div>
                 <button className='absolute -bottom-16 group-hover:bottom-4 duration-1000 bg-[#08D15F] px-4 py-2 rounded-sm text-xs text-white'><Link to = {`/shop/${item.id}`}>View Details</Link></button>

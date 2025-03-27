@@ -55,7 +55,7 @@ const ShoppingCart = () => {
   console.log(totalPrice, totalQty);
 
   return (
-    <>
+  
       <section>
       <div>
             <PageHeading heading="Shopping Curt" pageName="shopping curt" />
@@ -230,7 +230,7 @@ const ShoppingCart = () => {
           </div>
         </div>
       </section>
-    </>
+   
   );
 };
 
