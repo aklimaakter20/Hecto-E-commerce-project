@@ -1,23 +1,19 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { FaShoppingCart } from "react-icons/fa";
-// import { FaSearchDollar } from "react-icons/fa";
-// import { CiHeart } from "react-icons/ci";
-// import { addtoCard } from '../Slice/cardSlice';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const WishCard = () => {
   let wishlistData = useSelector((state) => state.wishItemSlice.wishItem);
 
-  // added item in cardslice  start
+  // added item in cardSlice  start
 
   let dispatch = useDispatch();
   const cardHandel = (item) => {
-    dispatch(addtoCard({ ...item, Qont: 1 }));
+    dispatch(addToCard({ ...item, Qty: 1 }));
     toast("Item Added  !");
   };
-  // added item in cardslice  end
 
   return (
     <section>

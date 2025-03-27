@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   let cartItemsNumber = useSelector((state)=>state.cartItemSlice.cartItems)
+  let wishItemNumber = useSelector((state)=> state.wishItemSlice.wishItem)
   
   return (
     <header className="bg-[#7E33E0]  ">
@@ -44,12 +45,9 @@ const Header = () => {
               <Link to = '/LogIn'><CiUser /></Link>
             </div>
             <div className="flex items-center gap-1 ">
-              <Link to='/wishCard'>
-              
-              <p>Wishlist</p>
-              <FaRegHeart />
-              <h6>5</h6>
-              </Link>
+              <Link to='/wishCard'><FaRegHeart />  </Link>
+            
+              <h6 className="absolute -top-4 -right-3 bg-red-500 w-5 h-5 flex items-center justify-center text-[12px] rounded-full">{cartItemsNumber.length}</h6>
             </div>
             <div className="relative ">
           <Link to = '/shoppingCart'><FiShoppingCart className=""/></Link>
