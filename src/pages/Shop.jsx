@@ -11,7 +11,7 @@ import AllLogo from "../Components/AllLogo";
 import { useDispatch } from "react-redux";
 import { addWishList } from "../Components/slice/wishSlice";
 import { addToCart } from "../Components/slice/cartSlice";
-
+import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 
 const Shop = () => {
@@ -211,7 +211,7 @@ const Shop = () => {
                       <MdOutlineZoomIn className="text-[#05E6B7] hover:text-[#2F1AC4]" />
                     </div>
                     <button className="absolute -bottom-16 group-hover:bottom-4 duration-1000 bg-[#08D15F] px-4 py-2 rounded-sm text-xs text-white">
-                      View Details
+                    <Link to = {`/shop/${item.id}`}>View Details</Link>
                     </button>
                   </div>
                   <div className="text-center py-5 group-hover:bg-[#151875] duration-700 ease-in-out group-hover:shadow-2xl">
@@ -251,7 +251,7 @@ const Shop = () => {
                       <MdOutlineZoomIn className="text-[#05E6B7] hover:text-[#2F1AC4]" />
                     </div>
                     <button className="absolute -bottom-16 group-hover:bottom-4 duration-1000 bg-[#08D15F] px-4 py-2 rounded-sm text-xs text-white">
-                      View Details
+                    <Link to = {`/shop/${item.id}`}>View Details</Link>
                     </button>
                   </div>
                   <div className="text-center py-5 group-hover:bg-[#151875] duration-700 ease-in-out group-hover:shadow-2xl">
@@ -290,7 +290,7 @@ const Shop = () => {
                         <MdOutlineZoomIn className="text-[#05E6B7] hover:text-[#2F1AC4]" />
                       </div>
                       <button className="absolute -bottom-16 group-hover:bottom-4 duration-1000 bg-[#08D15F] px-4 py-2 rounded-sm text-xs text-white">
-                        View Details
+                        <Link to = {`/shop/${item.id}`}>View Details</Link>
                       </button>
                     </div>
                     <div className="text-center py-5 group-hover:bg-[#151875] duration-700 ease-in-out group-hover:shadow-2xl">
@@ -329,7 +329,7 @@ const Shop = () => {
                       <MdOutlineZoomIn className="text-primary hover:text-[#08D15F]" />
                     </div>
                     <button className="absolute -bottom-16 group-hover:bottom-4 duration-1000 bg-[#08D15F] hover:bg-primary px-4 py-2 rounded-sm text-xs text-white">
-                      View Details
+                    <Link to = {`/shop/${item.id}`}>View Details</Link>
                     </button>
                   </div>
                   <div className="text-center py-5  duration-700 ease-in-out group-hover:shadow-2xl">
