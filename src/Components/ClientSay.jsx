@@ -1,5 +1,5 @@
 import React from 'react'
-import Group from '../assets/group.png'
+import Group from '../assets/Group.png'
 import Slider from "react-slick";
 
 const ClientSay = () => {
