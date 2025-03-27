@@ -9,8 +9,8 @@ import { MdOutlineZoomIn } from "react-icons/md";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import AllLogo from "../Components/AllLogo";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../Components/slice/cartSlice";
 import { addWishList } from "../Components/slice/wishSlice";
+import { addToCart } from "../Components/slice/cartSlice";
 
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -81,16 +81,17 @@ const Shop = () => {
     }
   };
 
-  let dispatch = useDispatch();
+     let dispatch= useDispatch()
 
-  const handleAddToCart = (product) => {
-    dispatch(addToCart({ ...product, qty: 1 }));
-    toast.success("added to Cart")
-  };
-  const handleAddToWish = (product) => {
-    dispatch(addWishList({ ...product, qty: 1 }));
-    toast.success("added to Cart")
-  };
+    const handelWishCard = (item) => {
+      dispatch(addWishList(item))
+      toast.success("added to wish")
+      console.log(item);
+    };
+     const handleAddToCart = (product) => {
+       dispatch(addToCart({ ...product, qty: 1 }));
+       toast.success("added to Cart")
+     };
 
 
   return (
@@ -191,8 +192,22 @@ const Shop = () => {
                   <div className="relative bg-[#F6F7FB] flex flex-col sm:flex-row gap-3 items-center justify-center py-12 overflow-hidden">
                     <img className="w-48" src={item.thumbnail} alt="" />
                     <div className="flex gap-2 absolute -left-20 top-0 duration-1000 ease-in-out group-hover:left-10 ">
-                      <FaRegHeart className="text-[#05E6B7] hover:text-[#2F1AC4]" />
-                      <LuShoppingCart className="text-[#05E6B7] hover:text-[#2F1AC4]" />
+                      <FaRegHeart  onClick={()=>{handelWishCard(item)}} className="text-[#05E6B7] hover:text-[#2F1AC4]" />
+                        
+                      <LuShoppingCart onClick={() => handleAddToCart(item)} className="text-[#05E6B7] hover:text-[#2F1AC4]" />
+                      <ToastContainer
+                    position="top-center"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick={false}
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="light"
+                    
+                     />
                       <MdOutlineZoomIn className="text-[#05E6B7] hover:text-[#2F1AC4]" />
                     </div>
                     <button className="absolute -bottom-16 group-hover:bottom-4 duration-1000 bg-[#08D15F] px-4 py-2 rounded-sm text-xs text-white">
@@ -217,8 +232,22 @@ const Shop = () => {
                   <div className="relative bg-[#F6F7FB] flex flex-col sm:flex-row gap-3 items-center justify-center py-12 overflow-hidden">
                     <img className="w-48" src={item.thumbnail} alt="" />
                     <div className="flex gap-2 absolute -left-20 top-0 duration-1000 ease-in-out group-hover:left-10 ">
-                      <FaRegHeart className="text-[#05E6B7] hover:text-[#2F1AC4]" />
-                      <LuShoppingCart className="text-[#05E6B7] hover:text-[#2F1AC4]" />
+                    <FaRegHeart  onClick={()=>{handelWishCard(item)}} className="text-[#05E6B7] hover:text-[#2F1AC4]" />
+                        
+                        <LuShoppingCart onClick={() => handleAddToCart(item)} className="text-[#05E6B7] hover:text-[#2F1AC4]" />
+                        <ToastContainer
+                      position="top-center"
+                      autoClose={5000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick={false}
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                      theme="light"
+                      
+                       />
                       <MdOutlineZoomIn className="text-[#05E6B7] hover:text-[#2F1AC4]" />
                     </div>
                     <button className="absolute -bottom-16 group-hover:bottom-4 duration-1000 bg-[#08D15F] px-4 py-2 rounded-sm text-xs text-white">
@@ -242,8 +271,22 @@ const Shop = () => {
                     <div className="relative bg-[#F6F7FB] flex flex-col sm:flex-row gap-3 items-center justify-center py-12 overflow-hidden">
                     <img className="w-48" src={item.thumbnail} alt="" />
                       <div className="flex gap-2 absolute -left-20 top-0 duration-1000 ease-in-out group-hover:left-10 ">
-                        <FaRegHeart className="text-[#05E6B7] hover:text-[#2F1AC4]" />
-                        <LuShoppingCart className="text-[#05E6B7] hover:text-[#2F1AC4]" />
+                      <FaRegHeart  onClick={()=>{handelWishCard(item)}} className="text-[#05E6B7] hover:text-[#2F1AC4]" />
+                        
+                        <LuShoppingCart onClick={() => handleAddToCart(item)} className="text-[#05E6B7] hover:text-[#2F1AC4]" />
+                        <ToastContainer
+                      position="top-center"
+                      autoClose={5000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick={false}
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                      theme="light"
+                      
+                       />
                         <MdOutlineZoomIn className="text-[#05E6B7] hover:text-[#2F1AC4]" />
                       </div>
                       <button className="absolute -bottom-16 group-hover:bottom-4 duration-1000 bg-[#08D15F] px-4 py-2 rounded-sm text-xs text-white">
@@ -267,8 +310,22 @@ const Shop = () => {
                   <div className="relative bg-[#EBEAEE] flex flex-col sm:flex-row gap-3 items-center justify-center py-12 overflow-hidden">
                     <img className="w-48" src={item.thumbnail} alt="" />
                     <div className="flex py-4 gap-2 absolute -left-20 top-0 duration-1000 ease-in-out group-hover:left-10 ">
-                      <FaRegHeart className="text-primary hover:text-[#08D15F]" />
-                      <LuShoppingCart className="text-primary hover:text-[#08D15F]" />
+                    <FaRegHeart  onClick={()=>{handelWishCard(item)}} className="text-[#05E6B7] hover:text-[#2F1AC4]" />
+                        
+                        <LuShoppingCart onClick={() => handleAddToCart(item)} className="text-[#05E6B7] hover:text-[#2F1AC4]" />
+                        <ToastContainer
+                      position="top-center"
+                      autoClose={5000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick={false}
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                      theme="light"
+                      
+                       />
                       <MdOutlineZoomIn className="text-primary hover:text-[#08D15F]" />
                     </div>
                     <button className="absolute -bottom-16 group-hover:bottom-4 duration-1000 bg-[#08D15F] hover:bg-primary px-4 py-2 rounded-sm text-xs text-white">

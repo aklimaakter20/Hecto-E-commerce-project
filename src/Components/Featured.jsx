@@ -63,7 +63,6 @@ const Featured = () => {
     dispatch(addWishList(item))
     toast.success("added to wish")
     console.log(item);
-    
    
   };
    const handleAddToCart = (product) => {
